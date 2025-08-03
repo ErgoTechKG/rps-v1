@@ -1,0 +1,638 @@
+.comparative-analysis-container {
+  padding: 24px;
+  background: linear-gradient(135deg, #E8F5E8 0%, #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4CAF50;
+  margin: 0 0 8px 0;
+}
+
+.course-info {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.comparison-selector,
+.metric-selector {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #333;
+}
+
+.refresh-button,
+.export-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-button {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.refresh-button:hover {
+  background: #e0e0e0;
+}
+
+.refresh-button.refreshing {
+  background: #2196F3;
+  color: white;
+}
+
+.export-button {
+  background: #4CAF50;
+  color: white;
+}
+
+.export-button:hover {
+  background: #45a049;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0 0 24px 0;
+}
+
+.subsection-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0 0 16px 0;
+}
+
+/* Domestic Comparison Styles */
+.current-position {
+  margin-bottom: 24px;
+}
+
+.position-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+}
+
+.position-card.highlight {
+  border-color: #4CAF50;
+  background: linear-gradient(135deg, #E8F5E8, #FFFFFF);
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.position-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0;
+}
+
+.ranking-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ranking-badge.small {
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.position-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.metric-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+.comparison-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.benchmark-table th {
+  background: #4CAF50;
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.benchmark-table td {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.benchmark-table tr:hover {
+  background: #f5f5f5;
+}
+
+.score-diff.positive {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.score-diff.negative {
+  color: #F44336;
+  font-weight: 600;
+}
+
+.score-diff.neutral {
+  color: #666;
+}
+
+/* International Comparison Styles */
+.international-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.international-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #2196F3;
+}
+
+.international-header {
+  margin-bottom: 16px;
+}
+
+.international-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1976D2;
+  margin: 0 0 4px 0;
+}
+
+.international-country {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.global-ranking {
+  background: #2196F3;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.international-metrics {
+  margin-bottom: 16px;
+}
+
+.international-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.gap-analysis {
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gap-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.gap-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #F44336;
+}
+
+/* Trend Analysis Styles */
+.trends-section,
+.projections-section {
+  margin-bottom: 32px;
+}
+
+.trends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.trend-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.trend-metric {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0;
+}
+
+.trend-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trend-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.trend-rate {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.trend-values {
+  display: flex;
+  justify-content: space-between;
+}
+
+.value-item {
+  text-align: center;
+}
+
+.value-item.current {
+  background: #E8F5E8;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.value-label {
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.value-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+.projections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.projection-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.projection-metric {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0 0 12px 0;
+}
+
+.projection-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-bottom: 16px;
+}
+
+.confidence-level {
+  text-align: left;
+}
+
+.confidence-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.confidence-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2E7D32;
+  float: right;
+}
+
+.confidence-bar {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Best Practices Styles */
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.practice-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-top: 4px solid #FF9800;
+}
+
+.practice-header {
+  margin-bottom: 16px;
+}
+
+.practice-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #E65100;
+  margin: 0 0 4px 0;
+}
+
+.practice-institution {
+  font-size: 12px;
+  color: #666;
+  background: #FFF3E0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.practice-content {
+  margin-bottom: 16px;
+}
+
+.practice-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.practice-impact {
+  background: #E8F5E8;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #4CAF50;
+}
+
+.impact-label {
+  font-size: 12px;
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+.impact-value {
+  font-size: 14px;
+  color: #2E7D32;
+  margin-left: 8px;
+}
+
+.practice-assessment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.assessment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.assessment-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.assessment-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* SWOT Analysis Styles */
+.swot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.swot-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.swot-card.strengths {
+  border-top: 4px solid #4CAF50;
+}
+
+.swot-card.weaknesses {
+  border-top: 4px solid #F44336;
+}
+
+.swot-card.opportunities {
+  border-top: 4px solid #2196F3;
+}
+
+.swot-card.threats {
+  border-top: 4px solid #FF9800;
+}
+
+.swot-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.swot-card.strengths .swot-title {
+  color: #2E7D32;
+}
+
+.swot-card.weaknesses .swot-title {
+  color: #C62828;
+}
+
+.swot-card.opportunities .swot-title {
+  color: #1565C0;
+}
+
+.swot-card.threats .swot-title {
+  color: #EF6C00;
+}
+
+.swot-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.swot-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+  padding-left: 16px;
+}
+
+.swot-item:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.swot-card.strengths .swot-item:before {
+  color: #4CAF50;
+}
+
+.swot-card.weaknesses .swot-item:before {
+  color: #F44336;
+}
+
+.swot-card.opportunities .swot-item:before {
+  color: #2196F3;
+}
+
+.swot-card.threats .swot-item:before {
+  color: #FF9800;
+}
+
+.swot-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comparative-analysis-container {
+    padding: 16px;
+  }
+  
+  .analysis-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .header-actions {
+    flex-wrap: wrap;
+  }
+  
+  .trends-grid,
+  .projections-grid,
+  .practices-grid,
+  .international-grid,
+  .swot-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .position-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .trend-values {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .practice-assessment {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

@@ -67,6 +67,10 @@ import ProfessorWorkload from './pages/leader/courses/lab-rotation/resource-anal
 import LabUtilization from './pages/leader/courses/lab-rotation/resource-analysis/LabUtilization'
 import BudgetExecution from './pages/leader/courses/lab-rotation/resource-analysis/BudgetExecution'
 import Optimization from './pages/leader/courses/lab-rotation/resource-analysis/Optimization'
+import StudentOutcomes from './pages/leader/courses/lab-rotation/quality-assessment/StudentOutcomes'
+import SatisfactionSurvey from './pages/leader/courses/lab-rotation/quality-assessment/SatisfactionSurvey'
+import GoalAchievement from './pages/leader/courses/lab-rotation/quality-assessment/GoalAchievement'
+import ComparativeAnalysis from './pages/leader/courses/lab-rotation/quality-assessment/ComparativeAnalysis'
 import './App.css'
 
 function App() {
@@ -642,6 +646,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['leader']}>
                   <Optimization />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/quality-assessment/student-outcomes" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <StudentOutcomes />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/quality-assessment/satisfaction-survey" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <SatisfactionSurvey />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/quality-assessment/goal-achievement" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <GoalAchievement />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/quality-assessment/comparative-analysis" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <ComparativeAnalysis />
                 </ProtectedRoute>
               } 
             />

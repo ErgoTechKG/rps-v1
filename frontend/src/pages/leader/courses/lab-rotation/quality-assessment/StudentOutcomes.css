@@ -1,0 +1,769 @@
+.student-outcomes-container {
+  padding: 24px;
+  background: linear-gradient(135deg, #FFF3E0 0%, #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+.outcomes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #FF6F00;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FF6F00;
+  margin: 0 0 8px 0;
+}
+
+.course-info {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.view-selector,
+.period-selector {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #333;
+}
+
+.refresh-button, .export-button {
+  padding: 8px 16px;
+  border: 1px solid #FF6F00;
+  border-radius: 6px;
+  background: white;
+  color: #FF6F00;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-button:hover, .export-button:hover {
+  background: #FF6F00;
+  color: white;
+}
+
+.refresh-button.refreshing {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-button:disabled {
+  cursor: not-allowed;
+}
+
+.outcomes-overview .metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.metric-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.primary-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  background: #FFF8E1;
+  border-radius: 8px;
+}
+
+.metric-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FF6F00;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.secondary-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.secondary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  background: #F8F9FA;
+  border-radius: 6px;
+}
+
+.secondary-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.secondary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.satisfaction-details,
+.research-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.satisfaction-item,
+.research-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #F8F9FA;
+  border-radius: 6px;
+}
+
+.satisfaction-label,
+.research-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.satisfaction-value,
+.research-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF6F00;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.competency-tracking {
+  margin-bottom: 32px;
+}
+
+.competency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.competency-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+}
+
+.competency-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.competency-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+.competency-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  background: #F8F9FA;
+  border-radius: 6px;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.progress-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.progress-value.baseline {
+  color: #999;
+}
+
+.progress-value.current {
+  color: #FF6F00;
+}
+
+.progress-value.target {
+  color: #4CAF50;
+}
+
+.progress-bar {
+  position: relative;
+  height: 8px;
+  background: #E0E0E0;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.target-line {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 12px;
+  background: #4CAF50;
+  border-radius: 1px;
+}
+
+.competency-gain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #E8F5E9;
+  border-radius: 6px;
+}
+
+.gain-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.gain-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.learning-objectives {
+  margin-bottom: 32px;
+}
+
+.objectives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.objective-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+}
+
+.objective-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.objective-info {
+  flex: 1;
+}
+
+.objective-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.objective-timeframe {
+  font-size: 12px;
+  color: #666;
+  background: #F0F0F0;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.objective-achievement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.achievement-rate {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FF6F00;
+}
+
+.achievement-count {
+  font-size: 12px;
+  color: #666;
+}
+
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #E0E0E0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #FF6F00, #FF8F00);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.difficulty-indicator {
+  flex-shrink: 0;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+}
+
+.difficulty-badge.high {
+  background: #F44336;
+}
+
+.difficulty-badge.medium {
+  background: #FF9800;
+}
+
+.difficulty-badge.low {
+  background: #4CAF50;
+}
+
+.project-quality {
+  margin-bottom: 32px;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.quality-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+}
+
+.quality-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quality-category {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.quality-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trend-icon {
+  font-size: 16px;
+  color: #FF6F00;
+}
+
+.trend-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.quality-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  background: #FFF8E1;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.score-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FF6F00;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.score-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.quality-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.distribution-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.distribution-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.distribution-label {
+  font-size: 12px;
+  color: #666;
+  min-width: 40px;
+}
+
+.distribution-bar {
+  flex: 1;
+  height: 6px;
+  background: #E0E0E0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.distribution-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.distribution-fill.excellent {
+  background: #4CAF50;
+}
+
+.distribution-fill.good {
+  background: #8BC34A;
+}
+
+.distribution-fill.average {
+  background: #FF9800;
+}
+
+.distribution-fill.poor {
+  background: #F44336;
+}
+
+.distribution-count {
+  font-size: 12px;
+  color: #333;
+  font-weight: 600;
+  min-width: 30px;
+  text-align: right;
+}
+
+.career-outcomes {
+  margin-bottom: 32px;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.career-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+}
+
+.career-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.career-percentage {
+  font-size: 48px;
+  font-weight: 700;
+  color: #FF6F00;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.career-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #F8F9FA;
+  border-radius: 6px;
+}
+
+.breakdown-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.breakdown-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF6F00;
+}
+
+.professor-comparison {
+  margin-bottom: 32px;
+}
+
+.comparison-table {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+  overflow-x: auto;
+}
+
+.outcomes-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.outcomes-table th {
+  background: #F8F9FA;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  white-space: nowrap;
+}
+
+.outcomes-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.top-performer {
+  background: #FFF8E1;
+}
+
+.professor-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.student-count {
+  color: #666;
+  text-align: center;
+}
+
+.competency-gain,
+.satisfaction-score,
+.publication-rate,
+.career-placement {
+  font-weight: 600;
+  color: #FF6F00;
+  text-align: center;
+}
+
+.ranking {
+  font-weight: 700;
+  color: #4CAF50;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .outcomes-overview .metrics-grid,
+  .quality-grid,
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .competency-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-outcomes-container {
+    padding: 16px;
+  }
+  
+  .outcomes-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .header-actions {
+    flex-wrap: wrap;
+  }
+  
+  .metric-card,
+  .competency-card,
+  .objective-card,
+  .quality-card,
+  .career-card {
+    padding: 16px;
+  }
+  
+  .primary-metric {
+    padding: 12px;
+  }
+  
+  .metric-value {
+    font-size: 28px;
+  }
+  
+  .secondary-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .objective-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .objective-achievement {
+    align-items: flex-start;
+  }
+  
+  .career-percentage {
+    font-size: 36px;
+  }
+  
+  .comparison-table {
+    padding: 16px;
+  }
+  
+  .outcomes-table th,
+  .outcomes-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

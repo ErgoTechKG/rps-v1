@@ -1,5 +1,7 @@
 # User Story 022: Leader Quality Assessment for Lab Rotation
 
+**Status**: finished
+
 ## Story
 **As a** Leader  
 **I want** to assess the quality and effectiveness of lab rotation courses  
