@@ -1,5 +1,7 @@
 # User Story 007: User Profile Management
 
+**Status:** finished
+
 ## Story
 **As a** user  
 **I want** to manage my profile information and account settings  

@@ -178,13 +178,13 @@ const Navigation = () => {
                   </div>
                 </div>
                 <div className="user-menu-items">
-                  <Link to="/profile" className="user-menu-item">
+                  <Link to="/shared/profile" className="user-menu-item">
                     <span className="menu-icon">👤</span>
                     个人资料
                   </Link>
-                  <Link to="/settings" className="user-menu-item">
-                    <span className="menu-icon">⚙️</span>
-                    设置
+                  <Link to="/shared/notifications/preferences" className="user-menu-item">
+                    <span className="menu-icon">🔔</span>
+                    通知设置
                   </Link>
                   <hr className="menu-divider" />
                   <button onClick={handleLogout} className="user-menu-item logout">

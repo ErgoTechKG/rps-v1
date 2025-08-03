@@ -79,11 +79,47 @@ export const AuthProvider = ({ children }) => {
     setUser(null)
   }
 
+  const updateUser = async (updates) => {
+    try {
+      const isTestMode = import.meta.env.VITE_TEST_MODE !== 'false'
+      
+      if (isTestMode) {
+        // In test mode, just update the user object
+        const updatedUser = { ...user, ...updates }
+        localStorage.setItem('user', JSON.stringify(updatedUser))
+        setUser(updatedUser)
+        return { success: true, user: updatedUser }
+      } else {
+        const response = await fetch('/api/user/profile', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          },
+          body: JSON.stringify(updates),
+        })
+        
+        const data = await response.json()
+        
+        if (response.ok) {
+          localStorage.setItem('user', JSON.stringify(data.user))
+          setUser(data.user)
+          return { success: true, user: data.user }
+        } else {
+          return { success: false, error: data.message || '更新失败' }
+        }
+      }
+    } catch (error) {
+      return { success: false, error: '网络错误，请稍后重试' }
+    }
+  }
+
   const value = {
     user,
     isLoading,
     login,
     logout,
+    updateUser,
     isAuthenticated: !!user
   }
 
