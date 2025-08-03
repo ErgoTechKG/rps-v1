@@ -35,6 +35,10 @@ import ApplicationForm from './pages/student/courses/lab-rotation/application/Ap
 import PreferenceManagement from './pages/student/courses/lab-rotation/application/PreferenceManagement'
 import ApplicationStatus from './pages/student/courses/lab-rotation/application/ApplicationStatus'
 import InterviewBooking from './pages/student/courses/lab-rotation/application/InterviewBooking'
+import Tasks from './pages/student/courses/lab-rotation/learning-process/Tasks'
+import Submissions from './pages/student/courses/lab-rotation/learning-process/Submissions'
+import Meetings from './pages/student/courses/lab-rotation/learning-process/Meetings'
+import Progress from './pages/student/courses/lab-rotation/learning-process/Progress'
 import './App.css'
 
 function App() {
@@ -322,6 +326,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <InterviewBooking />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/learning-process/tasks" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <Tasks />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/learning-process/submissions" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <Submissions />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/learning-process/meetings" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <Meetings />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/learning-process/progress" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <Progress />
                 </ProtectedRoute>
               } 
             />

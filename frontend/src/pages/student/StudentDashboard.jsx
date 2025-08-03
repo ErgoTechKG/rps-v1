@@ -106,6 +106,12 @@ const StudentDashboard = () => {
                   >
                     管理志愿顺序
                   </button>
+                  <button 
+                    className="secondary-action-btn"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/learning-process/tasks')}
+                  >
+                    学习过程管理
+                  </button>
                 </div>
               </div>
             </div>
@@ -129,6 +135,51 @@ const StudentDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">学习过程管理</h3>
+            <div className="card-content">
+              <div className="learning-process-info">
+                <p>管理您的学习活动和跟踪进度</p>
+                <div className="process-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">8</span>
+                    <span className="stat-label">进行中任务</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">3</span>
+                    <span className="stat-label">待提交作业</span>
+                  </div>
+                </div>
+                <div className="process-actions">
+                  <button 
+                    className="action-button"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/learning-process/tasks')}
+                  >
+                    任务管理
+                  </button>
+                  <button 
+                    className="action-button"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/learning-process/submissions')}
+                  >
+                    作业提交
+                  </button>
+                  <button 
+                    className="action-button"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/learning-process/meetings')}
+                  >
+                    会议管理
+                  </button>
+                  <button 
+                    className="action-button"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/learning-process/progress')}
+                  >
+                    进度跟踪
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">
@@ -139,8 +190,8 @@ const StudentDashboard = () => {
                   浏览研究课题
                 </button>
                 <button className="action-button">课程资料</button>
-                <button className="action-button">作业提交</button>
                 <button className="action-button">成绩查询</button>
+                <button className="action-button">联系导师</button>
               </div>
             </div>
           </div>
