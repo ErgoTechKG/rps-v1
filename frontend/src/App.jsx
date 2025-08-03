@@ -60,6 +60,9 @@ import DataStatistics from './pages/secretary/data-management/DataStatistics'
 import DataReports from './pages/secretary/data-management/DataReports'
 import DataReminders from './pages/secretary/data-management/DataReminders'
 import DataExport from './pages/secretary/data-management/DataExport'
+import KeyMetrics from './pages/leader/courses/lab-rotation/executive-overview/KeyMetrics'
+import ProgressSummary from './pages/leader/courses/lab-rotation/executive-overview/ProgressSummary'
+import Alerts from './pages/leader/courses/lab-rotation/executive-overview/Alerts'
 import './App.css'
 
 function App() {
@@ -572,6 +575,33 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['secretary']}>
                   <DataExport />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/executive-overview/key-metrics" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <KeyMetrics />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/executive-overview/progress-summary" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <ProgressSummary />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/executive-overview/alerts" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <Alerts />
                 </ProtectedRoute>
               } 
             />
