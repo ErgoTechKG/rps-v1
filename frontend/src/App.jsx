@@ -43,6 +43,10 @@ import PosterUpload from './pages/student/courses/lab-rotation/achievements/Post
 import ReportSubmission from './pages/student/courses/lab-rotation/achievements/ReportSubmission'
 import DefensePreparation from './pages/student/courses/lab-rotation/achievements/DefensePreparation'
 import MaterialsPortfolio from './pages/student/courses/lab-rotation/achievements/MaterialsPortfolio'
+import BasicInfo from './pages/secretary/course-management/lab-rotation/setup/BasicInfo'
+import Timeline from './pages/secretary/course-management/lab-rotation/setup/Timeline'
+import Rules from './pages/secretary/course-management/lab-rotation/setup/Rules'
+import Resources from './pages/secretary/course-management/lab-rotation/setup/Resources'
 import './App.css'
 
 function App() {
@@ -402,6 +406,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <MaterialsPortfolio />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/setup/basic-info" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <BasicInfo />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/setup/timeline" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <Timeline />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/setup/rules" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <Rules />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/setup/resources" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <Resources />
                 </ProtectedRoute>
               } 
             />

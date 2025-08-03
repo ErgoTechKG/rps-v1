@@ -1,0 +1,382 @@
+.resources-container {
+  background: linear-gradient(135deg, #F3E5F5 0%, #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+.resource-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #E0E0E0;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  background: #F5F5F5;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.header-cell {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #424242;
+  font-size: 14px;
+  border-right: 1px solid #E0E0E0;
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #F0F0F0;
+  font-size: 14px;
+  color: #616161;
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+.capacity-input {
+  width: 60px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #7C4DFF;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.available {
+  background: #E8F5E9;
+  color: #4CAF50;
+}
+
+.status-badge.unavailable {
+  background: #FFEBEE;
+  color: #F44336;
+}
+
+.budget-section {
+  background: #F8F9FA;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.budget-allocations {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.budget-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+}
+
+.budget-category {
+  font-weight: 500;
+  color: #424242;
+}
+
+.budget-percentage {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.percentage-input {
+  width: 60px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.budget-amount {
+  font-weight: 600;
+  color: #7C4DFF;
+  text-align: right;
+}
+
+.partnerships-section {
+  background: #F8F9FA;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.partnerships-header {
+  margin-bottom: 16px;
+}
+
+.add-partnership-btn {
+  background: #7C4DFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-partnership-btn:hover {
+  background: #6200EA;
+}
+
+.partnerships-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.partnership-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.partnership-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 12px;
+  flex: 1;
+}
+
+.partnership-name,
+.partnership-type,
+.partnership-status,
+.partnership-resources {
+  font-size: 14px;
+}
+
+.remove-partnership-btn {
+  background: #F44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.remove-partnership-btn:hover {
+  background: #D32F2F;
+}
+
+.infrastructure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.infrastructure-item {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.infrastructure-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #424242;
+  margin: 0 0 12px 0;
+}
+
+.infrastructure-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status.sufficient {
+  background: #E8F5E9;
+  color: #4CAF50;
+}
+
+.status.insufficient {
+  background: #FFEBEE;
+  color: #F44336;
+}
+
+.software-licenses {
+  background: #F8F9FA;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.software-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #424242;
+  margin: 0 0 12px 0;
+}
+
+.software-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.software-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+.software-name {
+  font-weight: 500;
+  color: #424242;
+}
+
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-cell {
+    border-right: none;
+    border-bottom: 1px solid #F0F0F0;
+    justify-content: space-between;
+  }
+
+  .table-cell:before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #424242;
+  }
+
+  .budget-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .partnership-fields {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .partnership-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .infrastructure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .software-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .budget-section,
+  .partnerships-section,
+  .software-licenses {
+    padding: 16px;
+  }
+
+  .partnership-card {
+    padding: 12px;
+  }
+}
