@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { FileText, BarChart, Trophy, AlertCircle, Download, ArrowLeft } from 'lucide-react'
-import Layout from '../../../../../components/Layout'
 import FinalResults from './FinalResults'
 import ScoreBreakdown from './ScoreBreakdown'
 import Ranking from './Ranking'
@@ -104,17 +103,14 @@ const ResultsQuery = () => {
 
   if (loading) {
     return (
-      <Layout>
-        <div className="results-query-loading">
-          <div className="spinner">加载评价结果中...</div>
-        </div>
-      </Layout>
+      <div className="results-query-loading">
+        <div className="spinner">加载评价结果中...</div>
+      </div>
     )
   }
 
   return (
-    <Layout>
-      <div className="results-query-container">
+    <div className="results-query-container">
         <div className="results-header">
           <button 
             className="back-button"
@@ -221,7 +217,6 @@ const ResultsQuery = () => {
           </div>
         </div>
       </div>
-    </Layout>
   )
 }
 
