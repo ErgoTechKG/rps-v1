@@ -28,6 +28,9 @@ import HomeworkReview from './pages/professor/courses/lab-rotation/assessment/Ho
 import ReportEvaluation from './pages/professor/courses/lab-rotation/assessment/ReportEvaluation'
 import DefenseScoring from './pages/professor/courses/lab-rotation/assessment/DefenseScoring'
 import FinalGrading from './pages/professor/courses/lab-rotation/assessment/FinalGrading'
+import TopicBrowsingList from './pages/student/courses/lab-rotation/topic-browsing/TopicBrowsingList'
+import TopicDetails from './pages/student/courses/lab-rotation/topic-browsing/TopicDetails'
+import ProfessorInfo from './pages/student/courses/lab-rotation/topic-browsing/ProfessorInfo'
 import './App.css'
 
 function App() {
@@ -252,6 +255,33 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <FinalGrading />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/topic-browsing/list" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <TopicBrowsingList />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/topic-browsing/details/:topicId" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <TopicDetails />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/topic-browsing/professor-info" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ProfessorInfo />
                 </ProtectedRoute>
               } 
             />

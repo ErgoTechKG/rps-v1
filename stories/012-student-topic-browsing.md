@@ -1,5 +1,7 @@
 # User Story 012: Student Topic Browsing and Discovery
 
+**Status:** finished
+
 ## Story
 **As a** Student  
 **I want** to browse available research topics and learn about professors' projects  

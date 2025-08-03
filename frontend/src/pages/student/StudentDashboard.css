@@ -116,6 +116,40 @@
   transform: translateY(-1px);
 }
 
+.lab-rotation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lab-rotation-info p {
+  font-size: 14px;
+  color: #374151;
+  margin: 0;
+}
+
+.rotation-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.primary-action-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-action-btn:hover {
+  background: #388E3C;
+}
+
 @media (max-width: 768px) {
   .progress-item {
     flex-direction: column;

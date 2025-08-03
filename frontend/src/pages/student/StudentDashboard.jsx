@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import './StudentDashboard.css'
 
 const StudentDashboard = () => {
+  const navigate = useNavigate()
   return (
     <div className="dashboard-container student-dashboard">
       <h1 className="page-title">学生工作台</h1>
@@ -71,6 +73,31 @@ const StudentDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">实验室轮转课程</h3>
+            <div className="card-content">
+              <div className="lab-rotation-info">
+                <p>当前轮转课程：计算机科学基础</p>
+                <div className="rotation-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">25</span>
+                    <span className="stat-label">可选课题</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">3</span>
+                    <span className="stat-label">已收藏</span>
+                  </div>
+                </div>
+                <button 
+                  className="primary-action-btn"
+                  onClick={() => navigate('/student/courses/lab-rotation/CS101/topic-browsing/list')}
+                >
+                  浏览研究课题
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">AI学习助手</h3>
             <div className="card-content">
               <div className="ai-assistant">
@@ -91,9 +118,14 @@ const StudentDashboard = () => {
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">
+                <button 
+                  className="action-button"
+                  onClick={() => navigate('/student/courses/lab-rotation/CS101/topic-browsing/list')}
+                >
+                  浏览研究课题
+                </button>
                 <button className="action-button">课程资料</button>
                 <button className="action-button">作业提交</button>
-                <button className="action-button">AI学习助手</button>
                 <button className="action-button">成绩查询</button>
               </div>
             </div>
