@@ -1,0 +1,201 @@
+.professor-dashboard {
+  background: linear-gradient(135deg, #E8F0FE 0%, #F8F9FA 100%);
+}
+
+.dashboard-container {
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  background: white;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 0 24px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1A73E8;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #212121;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  color: #757575;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #F5F5F5;
+  border-color: #BDBDBD;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  margin: 0 0 16px 0;
+  border-bottom: 2px solid #1A73E8;
+  padding-bottom: 8px;
+}
+
+.card-content {
+  color: #757575;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1A73E8;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #757575;
+  margin-top: 4px;
+}
+
+.task-list,
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item,
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.task-item:last-child,
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.task-text,
+.notification-text {
+  font-size: 14px;
+  color: #212121;
+}
+
+.task-count {
+  background: #E3F2FD;
+  color: #1A73E8;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #BDBDBD;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.action-button {
+  padding: 12px;
+  background: #F8F9FA;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  color: #1A73E8;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background: #E8F0FE;
+  border-color: #1A73E8;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 16px;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .dashboard-card {
+    padding: 16px;
+  }
+  
+  .header-content {
+    padding: 0 16px;
+  }
+  
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+}

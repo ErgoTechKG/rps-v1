@@ -1,0 +1,164 @@
+.leader-dashboard {
+  background: linear-gradient(135deg, #FFF3E0 0%, #F8F9FA 100%);
+}
+
+.leader-dashboard .dashboard-title {
+  color: #FF6F00;
+}
+
+.leader-dashboard .card-title {
+  border-bottom-color: #FF6F00;
+}
+
+.kpi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kpi-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #F8F9FA;
+  border-radius: 4px;
+}
+
+.kpi-label {
+  font-size: 14px;
+  color: #212121;
+  flex: 1;
+}
+
+.kpi-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FF6F00;
+  margin: 0 12px;
+}
+
+.kpi-trend {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.kpi-trend.up {
+  background: #E8F5E9;
+  color: #4CAF50;
+}
+
+.kpi-trend.down {
+  background: #FFEBEE;
+  color: #F44336;
+}
+
+.goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.goal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goal-name {
+  font-size: 14px;
+  color: #212121;
+}
+
+.goal-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-bar {
+  flex: 1;
+  height: 8px;
+  background: #E0E0E0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.goal-fill {
+  height: 100%;
+  background: #FF6F00;
+  transition: width 0.3s ease;
+}
+
+.goal-percent {
+  font-size: 12px;
+  color: #FF6F00;
+  font-weight: 500;
+  min-width: 40px;
+  text-align: right;
+}
+
+.recommendation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommendation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #F8F9FA;
+  border-radius: 4px;
+  border-left: 3px solid #FF6F00;
+}
+
+.recommendation-text {
+  font-size: 14px;
+  color: #212121;
+  flex: 1;
+}
+
+.recommendation-impact {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #FFF3E0;
+  color: #FF6F00;
+}
+
+.leader-dashboard .action-button {
+  color: #FF6F00;
+}
+
+.leader-dashboard .action-button:hover {
+  background: #FFF3E0;
+  border-color: #FF6F00;
+}
+
+@media (max-width: 768px) {
+  .kpi-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .kpi-value {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .recommendation-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .recommendation-impact {
+    text-align: center;
+  }
+}
