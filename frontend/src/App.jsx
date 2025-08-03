@@ -55,6 +55,11 @@ import TaskCompletion from './pages/secretary/course-management/lab-rotation/pro
 import SubmissionTracking from './pages/secretary/course-management/lab-rotation/process-monitoring/SubmissionTracking'
 import AttendanceMonitoring from './pages/secretary/course-management/lab-rotation/process-monitoring/AttendanceMonitoring'
 import AlertManagement from './pages/secretary/course-management/lab-rotation/process-monitoring/AlertManagement'
+import DataCollection from './pages/secretary/data-management/DataCollection'
+import DataStatistics from './pages/secretary/data-management/DataStatistics'
+import DataReports from './pages/secretary/data-management/DataReports'
+import DataReminders from './pages/secretary/data-management/DataReminders'
+import DataExport from './pages/secretary/data-management/DataExport'
 import './App.css'
 
 function App() {
@@ -522,6 +527,51 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['secretary']}>
                   <AlertManagement />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/data-management/collection" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <DataCollection />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/data-management/statistics" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <DataStatistics />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/data-management/reports" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <DataReports />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/data-management/reminders" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <DataReminders />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/data-management/export" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <DataExport />
                 </ProtectedRoute>
               } 
             />

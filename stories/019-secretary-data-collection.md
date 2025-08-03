@@ -1,5 +1,7 @@
 # User Story 019: Secretary Data Collection and Management
 
+**Status:** finished
+
 ## Story
 **As a** Secretary  
 **I want** to collect, organize, and manage all data related to lab rotation courses  
