@@ -48,10 +48,10 @@ const BasicSettings = () => {
     setLoading(true)
     setTimeout(() => {
       const data = {
-        courseName: 'Advanced Computer Science',
+        courseName: '高级计算机科学',
         evaluationType: 'comprehensive',
         evaluationPeriod: ['2025-01-01', '2025-03-31'],
-        description: 'Comprehensive evaluation for graduate students',
+        description: '研究生综合评估',
         status: 'active',
         allowLateSubmission: true,
         lateSubmissionDays: 3,
@@ -76,7 +76,7 @@ const BasicSettings = () => {
   const handleSubmit = async (values) => {
     setSaving(true)
     setTimeout(() => {
-      message.success('Basic settings saved successfully')
+      message.success('基本设置保存成功')
       setSaving(false)
     }, 1000)
   }
@@ -86,13 +86,13 @@ const BasicSettings = () => {
       <Card className="page-header">
         <Row align="middle" justify="space-between">
           <Col>
-            <h2>Scheme Configuration - Basic Settings</h2>
-            <p>Configure fundamental evaluation parameters</p>
+            <h2>方案配置 - 基本设置</h2>
+            <p>配置基本评估参数</p>
           </Col>
           <Col>
             <Space>
               <Button onClick={() => navigate(`/secretary/courses/comprehensive-eval/${courseId}/evaluation-management`)}>
-                Back to Management
+                返回管理
               </Button>
               <Button 
                 type="primary" 
@@ -100,7 +100,7 @@ const BasicSettings = () => {
                 onClick={() => form.submit()}
                 loading={saving}
               >
-                Save Settings
+                保存设置
               </Button>
             </Space>
           </Col>

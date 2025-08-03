@@ -68,7 +68,7 @@ const EvaluationManagement = () => {
     setLoading(true)
     setTimeout(() => {
       setEvaluationData({
-        courseName: 'Advanced Computer Science',
+        courseName: '高级计算机科学',
         currentPhase: 'collection',
         phases: {
           collection: { status: 'in-progress', progress: 65 },
@@ -85,15 +85,15 @@ const EvaluationManagement = () => {
           averageProgress: 16
         },
         alerts: [
-          { type: 'warning', message: '15 students have missing materials', category: 'submission' },
-          { type: 'info', message: 'Phase deadline in 3 days', category: 'timeline' },
-          { type: 'error', message: '2 experts need replacement', category: 'expert' }
+          { type: 'warning', message: '15名学生材料缺失', category: 'submission' },
+          { type: 'info', message: '阶段截止日期还有3天', category: 'timeline' },
+          { type: 'error', message: '2名专家需要更换', category: 'expert' }
         ],
         timeline: [
-          { date: '2025-01-01', event: 'Evaluation period started', status: 'completed' },
-          { date: '2025-01-15', event: 'Collection phase opened', status: 'completed' },
-          { date: '2025-02-01', event: 'Collection deadline', status: 'upcoming' },
-          { date: '2025-02-15', event: 'Expert evaluation deadline', status: 'future' }
+          { date: '2025-01-01', event: '评估期开始', status: 'completed' },
+          { date: '2025-01-15', event: '收集阶段开放', status: 'completed' },
+          { date: '2025-02-01', event: '收集截止日期', status: 'upcoming' },
+          { date: '2025-02-15', event: '专家评估截止日期', status: 'future' }
         ]
       })
       setLoading(false)
@@ -102,10 +102,10 @@ const EvaluationManagement = () => {
 
   const handlePhaseTransition = () => {
     Modal.confirm({
-      title: 'Confirm Phase Transition',
-      content: 'Are you sure you want to advance to the next phase? This action cannot be undone.',
+      title: '确认阶段转换',
+      content: '您确定要进入下一阶段吗？此操作无法撤销。',
       onOk: () => {
-        message.success('Phase transition initiated')
+        message.success('阶段转换已启动')
         setShowPhaseModal(false)
       }
     })
@@ -116,7 +116,7 @@ const EvaluationManagement = () => {
       <Row gutter={[16, 16]}>
         <Col span={24}>
           <Card className="phase-progress-card">
-            <h3>Evaluation Progress</h3>
+            <h3>评估进度</h3>
             <div className="phase-timeline">
               {Object.entries(evaluationData?.phases || {}).map(([phase, data], index) => (
                 <div key={phase} className={`phase-item ${data.status}`}>
@@ -125,7 +125,7 @@ const EvaluationManagement = () => {
                      data.status === 'in-progress' ? <SyncOutlined spin /> : 
                      <ClockCircleOutlined />}
                   </div>
-                  <div className="phase-name">{phase.charAt(0).toUpperCase() + phase.slice(1)}</div>
+                  <div className="phase-name">{phase === 'collection' ? '收集' : phase === 'verification' ? '验证' : phase === 'evaluation' ? '评估' : phase === 'review' ? '审核' : '定稿'}</div>
                   <Progress 
                     percent={data.progress} 
                     size="small" 
@@ -140,7 +140,7 @@ const EvaluationManagement = () => {
               onClick={() => setShowPhaseModal(true)}
               style={{ marginTop: 16 }}
             >
-              Manage Phase Transition
+              管理阶段转换
             </Button>
           </Card>
         </Col>
@@ -148,7 +148,7 @@ const EvaluationManagement = () => {
         <Col xs={24} sm={12} lg={6}>
           <Card>
             <Statistic
-              title="Total Students"
+              title="学生总数"
               value={evaluationData?.statistics.totalStudents}
               prefix={<UserOutlined />}
             />
@@ -157,7 +157,7 @@ const EvaluationManagement = () => {
         <Col xs={24} sm={12} lg={6}>
           <Card>
             <Statistic
-              title="Submissions Received"
+              title="已收到提交"
               value={evaluationData?.statistics.submissionsReceived}
               suffix={`/ ${evaluationData?.statistics.totalStudents}`}
               valueStyle={{ color: '#3f8600' }}
@@ -167,7 +167,7 @@ const EvaluationManagement = () => {
         <Col xs={24} sm={12} lg={6}>
           <Card>
             <Statistic
-              title="Experts Assigned"
+              title="已分配专家"
               value={evaluationData?.statistics.expertsAssigned}
               prefix={<TeamOutlined />}
             />
@@ -176,7 +176,7 @@ const EvaluationManagement = () => {
         <Col xs={24} sm={12} lg={6}>
           <Card>
             <Statistic
-              title="Average Progress"
+              title="平均进度"
               value={evaluationData?.statistics.averageProgress}
               suffix="%"
               prefix={<DashboardOutlined />}
@@ -185,7 +185,7 @@ const EvaluationManagement = () => {
         </Col>
 
         <Col span={24}>
-          <Card title="System Alerts" extra={<Badge count={evaluationData?.alerts.length} />}>
+          <Card title="系统警报" extra={<Badge count={evaluationData?.alerts.length} />}>
             {evaluationData?.alerts.map((alert, index) => (
               <Alert
                 key={index}
@@ -196,7 +196,7 @@ const EvaluationManagement = () => {
                 style={{ marginBottom: 8 }}
                 action={
                   <Button size="small" type="link">
-                    View Details
+                    查看详情
                   </Button>
                 }
               />
@@ -205,7 +205,7 @@ const EvaluationManagement = () => {
         </Col>
 
         <Col span={24}>
-          <Card title="Evaluation Timeline" extra={<CalendarOutlined />}>
+          <Card title="评估时间线" extra={<CalendarOutlined />}>
             <Timeline mode="left">
               {evaluationData?.timeline.map((item, index) => (
                 <Timeline.Item 
@@ -229,11 +229,11 @@ const EvaluationManagement = () => {
       <Row gutter={[16, 16]}>
         <Col span={24}>
           <Card 
-            title="Phase Management" 
+            title="阶段管理" 
             extra={
               <Space>
-                <Button icon={<SyncOutlined />}>Refresh Status</Button>
-                <Button type="primary" icon={<ControlOutlined />}>Advanced Controls</Button>
+                <Button icon={<SyncOutlined />}>刷新状态</Button>
+                <Button type="primary" icon={<ControlOutlined />}>高级控制</Button>
               </Space>
             }
           >
@@ -244,7 +244,7 @@ const EvaluationManagement = () => {
                   className={`phase-control-card ${data.status}`}
                   hoverable
                 >
-                  <h4>{phase.charAt(0).toUpperCase() + phase.slice(1)} Phase</h4>
+                  <h4>{phase === 'collection' ? '收集阶段' : phase === 'verification' ? '验证阶段' : phase === 'evaluation' ? '评估阶段' : phase === 'review' ? '审核阶段' : '定稿阶段'}</h4>
                   <Tag color={
                     data.status === 'completed' ? 'green' : 
                     data.status === 'in-progress' ? 'blue' : 'default'
@@ -253,9 +253,9 @@ const EvaluationManagement = () => {
                   </Tag>
                   <Progress percent={data.progress} />
                   <div className="phase-actions">
-                    <Button size="small">View Details</Button>
+                    <Button size="small">查看详情</Button>
                     {data.status === 'in-progress' && (
-                      <Button size="small" type="primary">Manage</Button>
+                      <Button size="small" type="primary">管理</Button>
                     )}
                   </div>
                 </Card>
@@ -265,13 +265,13 @@ const EvaluationManagement = () => {
         </Col>
 
         <Col span={24}>
-          <Card title="Quick Actions">
+          <Card title="快速操作">
             <Space wrap size="large">
-              <Button icon={<SendOutlined />}>Send Reminders</Button>
-              <Button icon={<ExportOutlined />}>Export Progress Report</Button>
-              <Button icon={<BellOutlined />}>Configure Notifications</Button>
-              <Button icon={<AuditOutlined />}>Audit Trail</Button>
-              <Button icon={<FileProtectOutlined />}>Archive Data</Button>
+              <Button icon={<SendOutlined />}>发送提醒</Button>
+              <Button icon={<ExportOutlined />}>导出进度报告</Button>
+              <Button icon={<BellOutlined />}>配置通知</Button>
+              <Button icon={<AuditOutlined />}>审计记录</Button>
+              <Button icon={<FileProtectOutlined />}>归档数据</Button>
             </Space>
           </Card>
         </Col>
@@ -281,7 +281,7 @@ const EvaluationManagement = () => {
 
   const expertColumns = [
     {
-      title: 'Expert Name',
+      title: '专家姓名',
       dataIndex: 'name',
       key: 'name',
       render: (text) => <a>{text}</a>
@@ -320,7 +320,7 @@ const EvaluationManagement = () => {
       )
     },
     {
-      title: 'Actions',
+      title: '操作',
       key: 'actions',
       render: (_, record) => (
         <Space>
@@ -420,17 +420,17 @@ const EvaluationManagement = () => {
 
   const submissionColumns = [
     {
-      title: 'Student ID',
+      title: '学号',
       dataIndex: 'studentId',
       key: 'studentId'
     },
     {
-      title: 'Name',
+      title: '姓名',
       dataIndex: 'name',
       key: 'name'
     },
     {
-      title: 'Submission Status',
+      title: '提交状态',
       dataIndex: 'status',
       key: 'status',
       render: (status) => {
@@ -440,7 +440,7 @@ const EvaluationManagement = () => {
       }
     },
     {
-      title: 'Materials',
+      title: '材料',
       dataIndex: 'materials',
       key: 'materials',
       render: (materials) => (
@@ -454,7 +454,7 @@ const EvaluationManagement = () => {
       )
     },
     {
-      title: 'Last Updated',
+      title: '最后更新',
       dataIndex: 'lastUpdated',
       key: 'lastUpdated'
     },
@@ -463,8 +463,8 @@ const EvaluationManagement = () => {
       key: 'actions',
       render: () => (
         <Space>
-          <Button size="small">Review</Button>
-          <Button size="small">Send Reminder</Button>
+          <Button size="small">审核</Button>
+          <Button size="small">发送提醒</Button>
         </Space>
       )
     }
@@ -477,9 +477,9 @@ const EvaluationManagement = () => {
       name: 'Alice Johnson',
       status: 'complete',
       materials: [
-        { type: 'Report', submitted: true },
-        { type: 'Code', submitted: true },
-        { type: 'Video', submitted: true }
+        { type: '报告', submitted: true },
+        { type: '代码', submitted: true },
+        { type: '视频', submitted: true }
       ],
       lastUpdated: '2025-01-28 14:30'
     },
@@ -489,9 +489,9 @@ const EvaluationManagement = () => {
       name: 'Bob Smith',
       status: 'partial',
       materials: [
-        { type: 'Report', submitted: true },
-        { type: 'Code', submitted: true },
-        { type: 'Video', submitted: false }
+        { type: '报告', submitted: true },
+        { type: '代码', submitted: true },
+        { type: '视频', submitted: false }
       ],
       lastUpdated: '2025-01-27 10:15'
     }
@@ -501,24 +501,24 @@ const EvaluationManagement = () => {
     <div className="collection-monitoring">
       <Row gutter={[16, 16]}>
         <Col span={24}>
-          <Card title="Submission Tracking">
+          <Card title="提交跟踪">
             <div style={{ marginBottom: 16 }}>
               <Space>
                 <Select 
-                  placeholder="Filter by status"
+                  placeholder="按状态筛选"
                   style={{ width: 200 }}
                   allowClear
                 >
-                  <Select.Option value="complete">Complete</Select.Option>
-                  <Select.Option value="partial">Partial</Select.Option>
-                  <Select.Option value="missing">Missing</Select.Option>
+                  <Select.Option value="complete">完整</Select.Option>
+                  <Select.Option value="partial">部分</Select.Option>
+                  <Select.Option value="missing">缺失</Select.Option>
                 </Select>
                 <Input.Search 
-                  placeholder="Search students..."
+                  placeholder="搜索学生..."
                   style={{ width: 300 }}
                 />
                 <Button type="primary" icon={<ExportOutlined />}>
-                  Export Report
+                  导出报告
                 </Button>
               </Space>
             </div>
@@ -531,12 +531,12 @@ const EvaluationManagement = () => {
         </Col>
 
         <Col span={24}>
-          <Card title="Collection Statistics">
+          <Card title="收集统计">
             <Row gutter={[16, 16]}>
               <Col span={8}>
                 <Card>
                   <Statistic
-                    title="Complete Submissions"
+                    title="完整提交"
                     value={45}
                     suffix="/ 120"
                     valueStyle={{ color: '#3f8600' }}
@@ -546,7 +546,7 @@ const EvaluationManagement = () => {
               <Col span={8}>
                 <Card>
                   <Statistic
-                    title="Partial Submissions"
+                    title="部分提交"
                     value={33}
                     valueStyle={{ color: '#faad14' }}
                   />
@@ -555,7 +555,7 @@ const EvaluationManagement = () => {
               <Col span={8}>
                 <Card>
                   <Statistic
-                    title="Missing Submissions"
+                    title="缺失提交"
                     value={42}
                     valueStyle={{ color: '#cf1322' }}
                   />
@@ -573,8 +573,8 @@ const EvaluationManagement = () => {
       <Card className="page-header">
         <Row align="middle" justify="space-between">
           <Col>
-            <h2>Comprehensive Evaluation Management</h2>
-            <p>Course: {evaluationData?.courseName}</p>
+            <h2>综合评估管理</h2>
+            <p>课程：{evaluationData?.courseName}</p>
           </Col>
           <Col>
             <Space>
@@ -582,10 +582,10 @@ const EvaluationManagement = () => {
                 icon={<SettingOutlined />}
                 onClick={() => navigate(`/secretary/courses/comprehensive-eval/${courseId}/scheme-configuration/basic-settings`)}
               >
-                Scheme Configuration
+                方案配置
               </Button>
               <Button type="primary" icon={<DashboardOutlined />}>
-                Full Dashboard
+                完整仪表板
               </Button>
             </Space>
           </Col>
