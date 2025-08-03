@@ -24,6 +24,10 @@ import TaskAssignment from './pages/professor/courses/lab-rotation/process-manag
 import WeeklyMeetings from './pages/professor/courses/lab-rotation/process-management/WeeklyMeetings'
 import MilestoneReview from './pages/professor/courses/lab-rotation/process-management/MilestoneReview'
 import QAInteraction from './pages/professor/courses/lab-rotation/process-management/QAInteraction'
+import HomeworkReview from './pages/professor/courses/lab-rotation/assessment/HomeworkReview'
+import ReportEvaluation from './pages/professor/courses/lab-rotation/assessment/ReportEvaluation'
+import DefenseScoring from './pages/professor/courses/lab-rotation/assessment/DefenseScoring'
+import FinalGrading from './pages/professor/courses/lab-rotation/assessment/FinalGrading'
 import './App.css'
 
 function App() {
@@ -212,6 +216,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <QAInteraction />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/assessment/homework-review" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <HomeworkReview />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/assessment/report-evaluation" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <ReportEvaluation />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/assessment/defense-scoring" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <DefenseScoring />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/assessment/final-grading" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <FinalGrading />
                 </ProtectedRoute>
               } 
             />
