@@ -1,0 +1,310 @@
+.selection-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.selection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.selection-header h2 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.topic-filter {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topic-filter label {
+  font-weight: 500;
+  color: #666;
+}
+
+.topic-filter select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 300px;
+}
+
+.selection-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-card h4 {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+
+.stat-card p {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.stat-card p.accepted {
+  color: #28a745;
+}
+
+.stat-card p.waitlist {
+  color: #ffc107;
+}
+
+.stat-card p.rejected {
+  color: #dc3545;
+}
+
+.selection-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.list-header {
+  display: grid;
+  grid-template-columns: 80px 200px 250px 150px 150px 100px 200px;
+  gap: 15px;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  font-weight: 500;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.selection-item {
+  display: grid;
+  grid-template-columns: 80px 200px 250px 150px 150px 100px 200px;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.selection-item:hover {
+  background: #f8f9fa;
+}
+
+.selection-item.accepted {
+  background: #f0f8f0;
+}
+
+.selection-item.waitlist {
+  background: #fffbf0;
+}
+
+.selection-item.rejected {
+  background: #fef0f0;
+}
+
+.ranking input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.student-info strong {
+  display: block;
+  color: #2c3e50;
+  margin-bottom: 3px;
+}
+
+.student-info small {
+  color: #666;
+  font-size: 12px;
+}
+
+.topic-info small {
+  color: #666;
+  font-size: 13px;
+}
+
+.matching-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.score-bar {
+  flex: 1;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: #4CAF50;
+  transition: width 0.3s;
+}
+
+.matching-score span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4CAF50;
+}
+
+.interview-rating .rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #ff9800;
+}
+
+.interview-rating .no-rating {
+  color: #999;
+  font-size: 13px;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.accepted {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.waitlist {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.interviewed {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.selection-footer {
+  margin-top: 40px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notes h4 {
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.notes li {
+  margin-bottom: 8px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn-large {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -16,6 +16,10 @@ import ProfilePage from './pages/shared/profile/ProfilePage'
 import TopicManagement from './pages/professor/courses/lab-rotation/topic-management/TopicManagement'
 import TopicPublish from './pages/professor/courses/lab-rotation/topic-management/TopicPublish'
 import TopicEdit from './pages/professor/courses/lab-rotation/topic-management/TopicEdit'
+import Applications from './pages/professor/courses/lab-rotation/student-selection/Applications'
+import Interviews from './pages/professor/courses/lab-rotation/student-selection/Interviews'
+import Selection from './pages/professor/courses/lab-rotation/student-selection/Selection'
+import Confirmation from './pages/professor/courses/lab-rotation/student-selection/Confirmation'
 import './App.css'
 
 function App() {
@@ -132,6 +136,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <TopicEdit />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/student-selection/applications" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <Applications />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/student-selection/interviews" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <Interviews />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/student-selection/selection" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <Selection />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/student-selection/confirmation" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <Confirmation />
                 </ProtectedRoute>
               } 
             />

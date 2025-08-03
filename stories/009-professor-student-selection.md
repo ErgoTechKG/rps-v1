@@ -1,5 +1,7 @@
 # User Story 009: Professor Student Selection Process
 
+**Status:** finished
+
 ## Story
 **As a** Professor  
 **I want** to review student applications and select the best candidates for my research topics  
