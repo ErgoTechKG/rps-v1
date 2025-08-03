@@ -1,0 +1,432 @@
+/* Import base styles from ProfessorList */
+@import url('./ProfessorList.css');
+
+.student-list-container {
+  background: linear-gradient(135deg, #F3E5F5 0%, #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+.student-stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.student-table-container {
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.student-table thead {
+  background: #F8F9FA;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.student-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #212121;
+  border-bottom: 2px solid #E0E0E0;
+  white-space: nowrap;
+}
+
+.student-table td {
+  padding: 16px;
+  border-bottom: 1px solid #F0F0F0;
+  vertical-align: top;
+}
+
+.student-table tbody tr:hover {
+  background: #F8F9FA;
+}
+
+.student-table tbody tr.selected {
+  background: #F3E5F5;
+}
+
+.student-info {
+  min-width: 220px;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.student-name {
+  font-weight: 600;
+  color: #212121;
+  font-size: 16px;
+}
+
+.student-id {
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.student-major {
+  color: #333;
+  font-size: 13px;
+}
+
+.student-year {
+  color: #7C4DFF;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.student-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.student-contact span {
+  font-size: 11px;
+  color: #888;
+}
+
+.last-login {
+  font-size: 11px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.academic-info {
+  min-width: 160px;
+}
+
+.gpa-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gpa-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.gpa-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.prerequisites {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prerequisites-title {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.prerequisite {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.prerequisite.completed {
+  background: #E8F5E8;
+  color: #2E7D32;
+}
+
+.prerequisite.incomplete {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.status-column {
+  min-width: 120px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.status-submitted {
+  background: #E3F2FD;
+  color: #1976D2;
+}
+
+.status-pending {
+  background: #FFF3E0;
+  color: #F57C00;
+}
+
+.status-confirmed {
+  background: #E8F5E8;
+  color: #2E7D32;
+}
+
+.status-rejected {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.status-waitlist {
+  background: #F3E5F5;
+  color: #7B1FA2;
+}
+
+.interview-status {
+  font-size: 11px;
+  color: #2E7D32;
+  background: #E8F5E8;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+.assignment-status {
+  font-size: 11px;
+  color: #1976D2;
+  background: #E3F2FD;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.eligibility-column {
+  min-width: 130px;
+}
+
+.eligibility-select {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.eligibility-select.eligible {
+  background: #E8F5E8;
+  color: #2E7D32;
+  border-color: #4CAF50;
+}
+
+.eligibility-select.ineligible {
+  background: #FFEBEE;
+  color: #C62828;
+  border-color: #F44336;
+}
+
+.eligibility-select.pending {
+  background: #FFF3E0;
+  color: #F57C00;
+  border-color: #FF9800;
+}
+
+.preferences-column {
+  min-width: 180px;
+}
+
+.preferences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.preference-tag {
+  background: #F0F4FF;
+  color: #3F51B5;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.special-cases {
+  min-width: 120px;
+}
+
+.cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.case-tag {
+  background: #FFEBEE;
+  color: #C62828;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.no-cases {
+  color: #999;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.engagement-column {
+  min-width: 80px;
+}
+
+.engagement-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+
+.engagement-high {
+  background: #E8F5E8;
+  color: #2E7D32;
+}
+
+.engagement-medium {
+  background: #FFF3E0;
+  color: #F57C00;
+}
+
+.engagement-low {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.actions-column {
+  min-width: 120px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  transition: all 0.2s ease;
+}
+
+.action-btn.view {
+  background: #E3F2FD;
+  color: #1976D2;
+}
+
+.action-btn.message {
+  background: #E8F5E8;
+  color: #2E7D32;
+}
+
+.action-btn.edit {
+  background: #FFF3E0;
+  color: #F57C00;
+}
+
+.action-btn.exception {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Modal enhancements for student-specific content */
+.import-criteria {
+  margin-top: 20px;
+}
+
+.criteria-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.criteria-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.criteria-item label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.criteria-select,
+.criteria-input {
+  padding: 8px 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.delivery-options {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.option-item label {
+  font-size: 14px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .student-table {
+    min-width: 900px;
+  }
+
+  .criteria-grid {
+    grid-template-columns: 1fr;
+  }
+}

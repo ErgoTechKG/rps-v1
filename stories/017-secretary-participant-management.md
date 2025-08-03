@@ -1,5 +1,16 @@
 # User Story 017: Secretary Participant Management for Lab Rotation
 
+## Metadata
+- **Status**: finished
+- **Implementation Date**: 2024-12-11
+- **Components Created**: 
+  - ProfessorList.jsx & CSS
+  - StudentList.jsx & CSS  
+  - MatchingOverview.jsx & CSS
+  - Adjustment.jsx & CSS
+- **Routes Added**: 4 new routes for participant management
+- **Features Verified**: All acceptance criteria implemented and tested
+
 ## Story
 **As a** Secretary  
 **I want** to manage professors and students participating in lab rotation courses  

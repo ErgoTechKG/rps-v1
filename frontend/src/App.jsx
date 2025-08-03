@@ -47,6 +47,10 @@ import BasicInfo from './pages/secretary/course-management/lab-rotation/setup/Ba
 import Timeline from './pages/secretary/course-management/lab-rotation/setup/Timeline'
 import Rules from './pages/secretary/course-management/lab-rotation/setup/Rules'
 import Resources from './pages/secretary/course-management/lab-rotation/setup/Resources'
+import ProfessorList from './pages/secretary/course-management/lab-rotation/participant-management/ProfessorList'
+import StudentList from './pages/secretary/course-management/lab-rotation/participant-management/StudentList'
+import MatchingOverview from './pages/secretary/course-management/lab-rotation/participant-management/MatchingOverview'
+import Adjustment from './pages/secretary/course-management/lab-rotation/participant-management/Adjustment'
 import './App.css'
 
 function App() {
@@ -442,6 +446,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['secretary']}>
                   <Resources />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/participant-management/professor-list" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <ProfessorList />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/participant-management/student-list" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <StudentList />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/participant-management/matching-overview" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <MatchingOverview />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/participant-management/adjustment" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <Adjustment />
                 </ProtectedRoute>
               } 
             />

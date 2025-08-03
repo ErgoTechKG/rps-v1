@@ -1,0 +1,643 @@
+/* Import base styles */
+@import url('./ProfessorList.css');
+
+.adjustment-container {
+  background: linear-gradient(135deg, #F3E5F5 0%, #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+.tool-selector {
+  display: flex;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #FAFAFA;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.tool-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #E0E0E0;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-button.active {
+  background: #7C4DFF;
+  color: white;
+  border-color: #7C4DFF;
+}
+
+.tool-button:hover:not(.active) {
+  background: #F3E5F5;
+  color: #7C4DFF;
+  border-color: #7C4DFF;
+}
+
+.tool-content-area {
+  padding: 24px;
+}
+
+.tool-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tool-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #212121;
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #E0E0E0;
+  background: #F8F9FA;
+}
+
+/* Reassignment Tool Styles */
+.reassignment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+.students-panel,
+.professors-panel {
+  background: #F8F9FA;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.students-panel h4,
+.professors-panel h4 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.students-list,
+.professors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.student-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 8px;
+}
+
+.student-details {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.student-details span {
+  font-size: 13px;
+  color: #666;
+}
+
+.student-issues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.issue-tag {
+  background: #FFEBEE;
+  color: #C62828;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.student-actions {
+  min-width: 180px;
+}
+
+.professor-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  font-size: 13px;
+  background: white;
+}
+
+.professor-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #E0E0E0;
+}
+
+.professor-info {
+  margin-bottom: 12px;
+}
+
+.professor-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 4px;
+}
+
+.professor-research {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.capacity-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current-load {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  min-width: 40px;
+}
+
+.capacity-bar {
+  flex: 1;
+  height: 6px;
+  background: #E0E0E0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.capacity-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.professor-students {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.assigned-student {
+  background: #E3F2FD;
+  color: #1976D2;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Special Cases Tool Styles */
+.special-cases-grid {
+  padding: 24px;
+}
+
+.cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-card {
+  background: #FFFBF0;
+  border: 1px solid #FFE082;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.case-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.case-header .student-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.case-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #FFF3E0;
+  color: #F57C00;
+}
+
+.case-issues {
+  margin-bottom: 16px;
+}
+
+.issue-item {
+  margin-bottom: 8px;
+}
+
+.issue-text {
+  background: #FFEBEE;
+  color: #C62828;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.case-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Emergency Tool Styles */
+.emergency-actions {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.emergency-card {
+  background: white;
+  border: 2px solid #FFE082;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.emergency-card:hover {
+  border-color: #FF9800;
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.1);
+}
+
+.emergency-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.emergency-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.emergency-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+/* History Tool Styles */
+.history-table {
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.history-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.history-table thead {
+  background: #F8F9FA;
+}
+
+.history-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #212121;
+  border-bottom: 2px solid #E0E0E0;
+  white-space: nowrap;
+}
+
+.history-table td {
+  padding: 16px;
+  border-bottom: 1px solid #F0F0F0;
+  vertical-align: top;
+}
+
+.history-table tbody tr:hover {
+  background: #F8F9FA;
+}
+
+.type-column {
+  width: 60px;
+  text-align: center;
+}
+
+.type-icon {
+  font-size: 20px;
+}
+
+.student-column {
+  min-width: 100px;
+  font-weight: 500;
+  color: #333;
+}
+
+.content-column {
+  min-width: 200px;
+}
+
+.reassignment-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.reassignment-content .arrow {
+  color: #7C4DFF;
+  font-weight: bold;
+}
+
+.reason-column {
+  min-width: 150px;
+  font-size: 13px;
+  color: #666;
+}
+
+.time-column {
+  min-width: 120px;
+  font-size: 13px;
+  color: #666;
+}
+
+.operator-column {
+  min-width: 80px;
+  font-size: 13px;
+  color: #666;
+}
+
+.status-column {
+  min-width: 80px;
+}
+
+.status-completed {
+  background: #E8F5E8;
+  color: #2E7D32;
+}
+
+.status-pending {
+  background: #FFF3E0;
+  color: #F57C00;
+}
+
+.status-approved {
+  background: #E3F2FD;
+  color: #1976D2;
+}
+
+.status-rejected {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.actions-column {
+  min-width: 80px;
+}
+
+.action-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  margin-right: 4px;
+}
+
+.action-btn.view {
+  background: #E3F2FD;
+  color: #1976D2;
+}
+
+.action-btn.revert {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Modal Enhancements */
+.reassign-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.confirmation-info h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.adjustment-details {
+  background: #F8F9FA;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.adjustment-reason label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.reason-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.special-case-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.student-info h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.current-issues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.current-issues strong {
+  font-size: 14px;
+  color: #666;
+}
+
+.late-application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #7C4DFF;
+  box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .reassignment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .emergency-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tool-selector {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .tool-button {
+    text-align: center;
+  }
+  
+  .student-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .student-actions {
+    min-width: auto;
+  }
+  
+  .reassignment-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .history-table {
+    overflow-x: auto;
+  }
+  
+  .history-table table {
+    min-width: 800px;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
