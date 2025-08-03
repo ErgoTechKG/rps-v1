@@ -11,6 +11,9 @@ export const useNotifications = () => {
   return context
 }
 
+// Alias for backward compatibility
+export const useNotification = useNotifications
+
 export const NotificationProvider = ({ children }) => {
   const { user } = useAuth()
   const [notifications, setNotifications] = useState([])

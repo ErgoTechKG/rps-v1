@@ -1,0 +1,302 @@
+/* Milestone Review Styles */
+.progress-overview {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 32px;
+}
+
+.progress-overview h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.progress-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.student-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.student-info p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 12px 0;
+}
+
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.tab:hover:not(.active) {
+  background: #f3f4f6;
+}
+
+/* Milestones List */
+.milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.milestone-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.milestone-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.milestone-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.milestone-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.weight-badge {
+  padding: 4px 12px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.due-date {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.milestone-requirements {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.milestone-requirements h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.milestone-requirements pre {
+  font-family: inherit;
+  font-size: 14px;
+  color: #6b7280;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Submissions Section */
+.submissions-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.submissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.submission-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.submission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.student-name {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.submission-details {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.submission-details p {
+  margin: 4px 0;
+}
+
+.review-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.action-button {
+  flex: 1;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-button.approve {
+  background: #10b981;
+  color: white;
+}
+
+.action-button.approve:hover {
+  background: #059669;
+}
+
+.action-button.revision {
+  background: #f59e0b;
+  color: white;
+}
+
+.action-button.revision:hover {
+  background: #d97706;
+}
+
+.feedback-section {
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.feedback-section strong {
+  color: #374151;
+}
+
+.feedback-section p {
+  margin: 4px 0 0 0;
+  color: #6b7280;
+}
+
+/* Review Info */
+.review-info {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.review-info p {
+  font-size: 14px;
+  color: #374151;
+  margin: 4px 0;
+}
+
+.review-info strong {
+  color: #1a1a1a;
+}
+
+/* Button color variations */
+.primary-button.approve {
+  background: #10b981;
+}
+
+.primary-button.approve:hover {
+  background: #059669;
+}
+
+.primary-button.revision {
+  background: #f59e0b;
+}
+
+.primary-button.revision:hover {
+  background: #d97706;
+}

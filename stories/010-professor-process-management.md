@@ -1,5 +1,7 @@
 # User Story 010: Professor Process Management During Lab Rotation
 
+**Status:** finished
+
 ## Story
 **As a** Professor  
 **I want** to manage the ongoing learning process for students in my lab rotation  

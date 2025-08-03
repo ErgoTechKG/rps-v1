@@ -91,8 +91,18 @@ const ProfessorDashboard = () => {
                 <button className="action-button" onClick={() => window.location.href = '/professor/courses/lab-rotation/1/student-selection/applications'}>
                   学生选择
                 </button>
-                <button className="action-button">AI助手</button>
-                <button className="action-button">成绩录入</button>
+                <button className="action-button" onClick={() => window.location.href = '/professor/courses/lab-rotation/1/process-management/task-assignment'}>
+                  任务分配
+                </button>
+                <button className="action-button" onClick={() => window.location.href = '/professor/courses/lab-rotation/1/process-management/weekly-meetings'}>
+                  会议管理
+                </button>
+                <button className="action-button" onClick={() => window.location.href = '/professor/courses/lab-rotation/1/process-management/milestone-review'}>
+                  里程碑评审
+                </button>
+                <button className="action-button" onClick={() => window.location.href = '/professor/courses/lab-rotation/1/process-management/qa-interaction'}>
+                  学生答疑
+                </button>
               </div>
             </div>
           </div>

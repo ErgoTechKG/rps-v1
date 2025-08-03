@@ -20,6 +20,10 @@ import Applications from './pages/professor/courses/lab-rotation/student-selecti
 import Interviews from './pages/professor/courses/lab-rotation/student-selection/Interviews'
 import Selection from './pages/professor/courses/lab-rotation/student-selection/Selection'
 import Confirmation from './pages/professor/courses/lab-rotation/student-selection/Confirmation'
+import TaskAssignment from './pages/professor/courses/lab-rotation/process-management/TaskAssignment'
+import WeeklyMeetings from './pages/professor/courses/lab-rotation/process-management/WeeklyMeetings'
+import MilestoneReview from './pages/professor/courses/lab-rotation/process-management/MilestoneReview'
+import QAInteraction from './pages/professor/courses/lab-rotation/process-management/QAInteraction'
 import './App.css'
 
 function App() {
@@ -172,6 +176,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <Confirmation />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/process-management/task-assignment" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <TaskAssignment />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/process-management/weekly-meetings" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <WeeklyMeetings />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/process-management/milestone-review" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <MilestoneReview />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/process-management/qa-interaction" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <QAInteraction />
                 </ProtectedRoute>
               } 
             />
