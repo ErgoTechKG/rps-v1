@@ -11,6 +11,7 @@ import LeaderDashboard from './pages/leader/LeaderDashboard'
 import Unauthorized from './pages/Unauthorized'
 import NotificationPreferences from './pages/shared/notifications/NotificationPreferences'
 import SharedCalendar from './pages/shared/calendar/SharedCalendar'
+import HelpCenter from './pages/shared/help/HelpCenter'
 import './App.css'
 
 function App() {
@@ -82,6 +83,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <SharedCalendar />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/shared/help" 
+              element={
+                <ProtectedRoute>
+                  <HelpCenter />
                 </ProtectedRoute>
               } 
             />

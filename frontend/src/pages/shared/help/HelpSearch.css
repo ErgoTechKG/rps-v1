@@ -1,0 +1,262 @@
+.help-search {
+  position: relative;
+  width: 100%;
+}
+
+.search-form {
+  width: 100%;
+  position: relative;
+}
+
+.search-input-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  font-size: 1.1rem;
+  color: #718096;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.search-input::placeholder {
+  color: #a0aec0;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-btn:hover {
+  background: #f7fafc;
+  color: #4a5568;
+}
+
+.search-btn {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+/* Search Suggestions */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 80px; /* Account for search button width */
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.suggestions-header {
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.suggestion-item:hover {
+  background: #f8fafc;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-icon {
+  margin-right: 12px;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.suggestion-text {
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+/* Enhanced focus styles */
+.search-input:focus + .search-btn {
+  border-color: #3182ce;
+}
+
+/* Loading state */
+.search-form.loading .search-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .search-input-container {
+    gap: 8px;
+  }
+
+  .search-input {
+    padding: 12px 14px 12px 40px;
+    font-size: 0.95rem;
+  }
+
+  .search-btn {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .search-suggestions {
+    right: 70px; /* Adjust for smaller button */
+  }
+
+  .suggestion-item {
+    padding: 10px 14px;
+  }
+
+  .suggestion-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-suggestions {
+    right: 0; /* Full width on mobile */
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .search-input {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .search-input {
+    background: #2d3748;
+    color: #f7fafc;
+    border-color: #4a5568;
+  }
+
+  .search-input:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.1);
+  }
+
+  .search-suggestions {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .suggestions-header {
+    background: #1a202c;
+    color: #e2e8f0;
+    border-bottom-color: #4a5568;
+  }
+
+  .suggestion-item {
+    border-bottom-color: #4a5568;
+  }
+
+  .suggestion-item:hover {
+    background: #1a202c;
+  }
+
+  .suggestion-text {
+    color: #f7fafc;
+  }
+
+  .clear-btn:hover {
+    background: #4a5568;
+    color: #e2e8f0;
+  }
+}

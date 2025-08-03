@@ -153,7 +153,7 @@ const Navigation = () => {
             📅
           </Link>
 
-          <Link to="/help" className="nav-action-btn" aria-label="帮助">
+          <Link to="/shared/help" className="nav-action-btn" aria-label="帮助">
             ❓
           </Link>
 
