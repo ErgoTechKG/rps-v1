@@ -84,6 +84,7 @@ import UploadCenter from './pages/student/courses/comprehensive-eval/material-su
 import SubmissionStatus from './pages/student/courses/comprehensive-eval/material-submission/SubmissionStatus'
 import Preview from './pages/student/courses/comprehensive-eval/material-submission/Preview'
 import ProgressTracking from './pages/student/courses/comprehensive-eval/progress-tracking/ProgressTracking'
+import ResultsQuery from './pages/student/courses/comprehensive-eval/results-query/ResultsQuery'
 import './App.css'
 
 function App() {
@@ -578,6 +579,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <ProgressTracking />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/results-query/final-results" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ResultsQuery />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/results-query/score-breakdown" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ResultsQuery />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/results-query/ranking" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ResultsQuery />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/results-query/appeals" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ResultsQuery />
                 </ProtectedRoute>
               } 
             />

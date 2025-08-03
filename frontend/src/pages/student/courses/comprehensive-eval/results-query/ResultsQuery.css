@@ -1,0 +1,181 @@
+.results-query-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.results-query-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.spinner {
+  font-size: 18px;
+  color: #666;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.results-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.back-button,
+.export-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #f5f5f5;
+}
+
+.export-button.primary {
+  background: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+
+.export-button.primary:hover {
+  background: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.student-info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.student-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-item .label {
+  color: #666;
+  font-weight: 500;
+}
+
+.info-item .value {
+  color: #333;
+  font-weight: 600;
+}
+
+.results-tabs-card {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  height: 100%;
+}
+
+.tab-list {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #666;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #1890ff;
+}
+
+.tab-button.active {
+  color: #1890ff;
+  border-bottom-color: #1890ff;
+}
+
+.badge {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.badge.processing {
+  background: #52c41a;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tab-content {
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .results-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .student-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .tab-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab-button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}

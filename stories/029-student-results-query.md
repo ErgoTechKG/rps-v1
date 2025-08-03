@@ -1,5 +1,7 @@
 # User Story 029: Student Results Query and Appeals
 
+**Status**: finished
+
 ## Story
 **As a** Student  
 **I want** to access my comprehensive evaluation results and understand the appeals process  
