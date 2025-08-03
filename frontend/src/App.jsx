@@ -71,6 +71,7 @@ import StudentOutcomes from './pages/leader/courses/lab-rotation/quality-assessm
 import SatisfactionSurvey from './pages/leader/courses/lab-rotation/quality-assessment/SatisfactionSurvey'
 import GoalAchievement from './pages/leader/courses/lab-rotation/quality-assessment/GoalAchievement'
 import ComparativeAnalysis from './pages/leader/courses/lab-rotation/quality-assessment/ComparativeAnalysis'
+import ExpertDashboard from './pages/professor/courses/comprehensive-eval/ExpertDashboard'
 import './App.css'
 
 function App() {
@@ -295,6 +296,15 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <FinalGrading />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/comprehensive-eval/:courseId/expert-dashboard" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <ExpertDashboard />
                 </ProtectedRoute>
               } 
             />
