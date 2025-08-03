@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Layout from '../../../../../components/Layout'
 import './StudentOutcomes.css'
 
 const StudentOutcomes = () => {
@@ -248,7 +247,6 @@ const StudentOutcomes = () => {
   }
 
   return (
-    <Layout>
       <div className="student-outcomes-container">
         <div className="outcomes-header">
           <div className="header-left">
@@ -625,7 +623,6 @@ const StudentOutcomes = () => {
           </div>
         )}
       </div>
-    </Layout>
   )
 }
 

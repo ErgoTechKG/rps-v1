@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Layout from '../../../../../components/Layout'
 import './SatisfactionSurvey.css'
 
 const SatisfactionSurvey = () => {
@@ -188,7 +187,6 @@ const SatisfactionSurvey = () => {
   }
 
   return (
-    <Layout>
       <div className="satisfaction-survey-container">
         <div className="survey-header">
           <div className="header-left">
@@ -644,7 +642,6 @@ const SatisfactionSurvey = () => {
           </div>
         )}
       </div>
-    </Layout>
   )
 }
 

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Layout from '../../../../../components/Layout'
 import './ComparativeAnalysis.css'
 
 const ComparativeAnalysis = () => {
@@ -284,7 +283,6 @@ const ComparativeAnalysis = () => {
   }
 
   return (
-    <Layout>
       <div className="comparative-analysis-container">
         <div className="analysis-header">
           <div className="header-left">
@@ -601,7 +599,6 @@ const ComparativeAnalysis = () => {
           </div>
         )}
       </div>
-    </Layout>
   )
 }
 

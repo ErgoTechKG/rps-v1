@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Layout from '../../../../../components/Layout'
 import './GoalAchievement.css'
 
 const GoalAchievement = () => {
@@ -295,7 +294,6 @@ const GoalAchievement = () => {
   }
 
   return (
-    <Layout>
       <div className="goal-achievement-container">
         <div className="goal-header">
           <div className="header-left">
@@ -773,7 +771,6 @@ const GoalAchievement = () => {
           </div>
         )}
       </div>
-    </Layout>
   )
 }
 
