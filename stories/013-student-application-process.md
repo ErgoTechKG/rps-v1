@@ -1,5 +1,7 @@
 # User Story 013: Student Application Process for Lab Rotation
 
+**Status:** finished
+
 ## Story
 **As a** Student  
 **I want** to apply for lab rotation topics and manage my application process  

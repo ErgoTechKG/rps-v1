@@ -129,12 +129,7 @@ const TopicDetails = () => {
   }, [courseId, topicId])
 
   const handleApply = () => {
-    const newStatus = {
-      status: 'preparing',
-      appliedAt: new Date().toISOString()
-    }
-    setApplicationStatus(newStatus)
-    localStorage.setItem(`application_${courseId}_${topicId}`, JSON.stringify(newStatus))
+    navigate(`/student/courses/lab-rotation/${courseId}/application/apply?topicId=${topicId}`)
   }
 
   const updateProgress = (item, value) => {

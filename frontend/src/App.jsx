@@ -31,6 +31,10 @@ import FinalGrading from './pages/professor/courses/lab-rotation/assessment/Fina
 import TopicBrowsingList from './pages/student/courses/lab-rotation/topic-browsing/TopicBrowsingList'
 import TopicDetails from './pages/student/courses/lab-rotation/topic-browsing/TopicDetails'
 import ProfessorInfo from './pages/student/courses/lab-rotation/topic-browsing/ProfessorInfo'
+import ApplicationForm from './pages/student/courses/lab-rotation/application/ApplicationForm'
+import PreferenceManagement from './pages/student/courses/lab-rotation/application/PreferenceManagement'
+import ApplicationStatus from './pages/student/courses/lab-rotation/application/ApplicationStatus'
+import InterviewBooking from './pages/student/courses/lab-rotation/application/InterviewBooking'
 import './App.css'
 
 function App() {
@@ -282,6 +286,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <ProfessorInfo />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/application/apply" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ApplicationForm />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/application/volunteer-preference" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <PreferenceManagement />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/application/status" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ApplicationStatus />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/application/interview-booking" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <InterviewBooking />
                 </ProtectedRoute>
               } 
             />

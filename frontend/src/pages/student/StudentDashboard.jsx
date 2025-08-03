@@ -83,16 +83,30 @@ const StudentDashboard = () => {
                     <span className="stat-label">可选课题</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">3</span>
-                    <span className="stat-label">已收藏</span>
+                    <span className="stat-number">2</span>
+                    <span className="stat-label">进行中申请</span>
                   </div>
                 </div>
-                <button 
-                  className="primary-action-btn"
-                  onClick={() => navigate('/student/courses/lab-rotation/CS101/topic-browsing/list')}
-                >
-                  浏览研究课题
-                </button>
+                <div className="rotation-actions">
+                  <button 
+                    className="primary-action-btn"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/topic-browsing/list')}
+                  >
+                    浏览研究课题
+                  </button>
+                  <button 
+                    className="secondary-action-btn"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/application/status')}
+                  >
+                    查看申请状态
+                  </button>
+                  <button 
+                    className="secondary-action-btn"
+                    onClick={() => navigate('/student/courses/lab-rotation/CS101/application/volunteer-preference')}
+                  >
+                    管理志愿顺序
+                  </button>
+                </div>
               </div>
             </div>
           </div>
