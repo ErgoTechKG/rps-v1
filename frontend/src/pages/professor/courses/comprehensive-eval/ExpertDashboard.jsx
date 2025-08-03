@@ -381,7 +381,7 @@ function ExpertDashboard() {
         <section className="quick-access">
           <h2>Quick Access Tools</h2>
           <div className="tools-grid">
-            <Link to={`/professor/courses/comprehensive-eval/${courseId}/standards`} className="tool-card">
+            <Link to={`/professor/courses/comprehensive-eval/${courseId}/standards-reference/criteria`} className="tool-card">
               <div className="tool-icon">📋</div>
               <div className="tool-name">Evaluation Standards</div>
               <div className="tool-description">View rubrics and guidelines</div>

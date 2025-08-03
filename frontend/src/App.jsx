@@ -74,6 +74,9 @@ import ComparativeAnalysis from './pages/leader/courses/lab-rotation/quality-ass
 import ExpertDashboard from './pages/professor/courses/comprehensive-eval/ExpertDashboard'
 import EvaluationInterface from './pages/professor/courses/comprehensive-eval/EvaluationInterface'
 import BatchEvaluation from './pages/professor/courses/comprehensive-eval/BatchEvaluation'
+import EvaluationCriteria from './pages/professor/courses/comprehensive-eval/standards-reference/EvaluationCriteria'
+import ScoringRubrics from './pages/professor/courses/comprehensive-eval/standards-reference/ScoringRubrics'
+import EvaluationExamples from './pages/professor/courses/comprehensive-eval/standards-reference/EvaluationExamples'
 import './App.css'
 
 function App() {
@@ -325,6 +328,33 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <BatchEvaluation />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/comprehensive-eval/:courseId/standards-reference/criteria" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <EvaluationCriteria />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/comprehensive-eval/:courseId/standards-reference/rubrics" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <ScoringRubrics />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/comprehensive-eval/:courseId/standards-reference/examples" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <EvaluationExamples />
                 </ProtectedRoute>
               } 
             />

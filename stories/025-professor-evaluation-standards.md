@@ -1,5 +1,7 @@
 # User Story 025: Professor Evaluation Standards and Reference Materials
 
+**Status:** finished
+
 ## Story
 **As a** Professor expert evaluator  
 **I want** to access comprehensive evaluation standards and reference materials  
