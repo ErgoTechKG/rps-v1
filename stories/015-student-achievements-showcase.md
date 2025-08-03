@@ -1,5 +1,7 @@
 # User Story 015: Student Achievements and Final Showcase
 
+**Status:** finished
+
 ## Story
 **As a** Student  
 **I want** to create and showcase my research achievements from the lab rotation  

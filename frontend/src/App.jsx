@@ -39,6 +39,10 @@ import Tasks from './pages/student/courses/lab-rotation/learning-process/Tasks'
 import Submissions from './pages/student/courses/lab-rotation/learning-process/Submissions'
 import Meetings from './pages/student/courses/lab-rotation/learning-process/Meetings'
 import Progress from './pages/student/courses/lab-rotation/learning-process/Progress'
+import PosterUpload from './pages/student/courses/lab-rotation/achievements/PosterUpload'
+import ReportSubmission from './pages/student/courses/lab-rotation/achievements/ReportSubmission'
+import DefensePreparation from './pages/student/courses/lab-rotation/achievements/DefensePreparation'
+import MaterialsPortfolio from './pages/student/courses/lab-rotation/achievements/MaterialsPortfolio'
 import './App.css'
 
 function App() {
@@ -362,6 +366,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <Progress />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/achievements/poster-upload" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <PosterUpload />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/achievements/report-submission" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ReportSubmission />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/achievements/defense-preparation" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <DefensePreparation />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/lab-rotation/:courseId/achievements/materials" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <MaterialsPortfolio />
                 </ProtectedRoute>
               } 
             />
