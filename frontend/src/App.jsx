@@ -13,6 +13,9 @@ import NotificationPreferences from './pages/shared/notifications/NotificationPr
 import SharedCalendar from './pages/shared/calendar/SharedCalendar'
 import HelpCenter from './pages/shared/help/HelpCenter'
 import ProfilePage from './pages/shared/profile/ProfilePage'
+import TopicManagement from './pages/professor/courses/lab-rotation/topic-management/TopicManagement'
+import TopicPublish from './pages/professor/courses/lab-rotation/topic-management/TopicPublish'
+import TopicEdit from './pages/professor/courses/lab-rotation/topic-management/TopicEdit'
 import './App.css'
 
 function App() {
@@ -102,6 +105,33 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ProfilePage />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/topic-management" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <TopicManagement />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/topic-management/publish" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <TopicPublish />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/lab-rotation/:courseId/topic-management/edit/:topicId" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <TopicEdit />
                 </ProtectedRoute>
               } 
             />

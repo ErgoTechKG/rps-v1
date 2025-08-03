@@ -1,5 +1,7 @@
 # User Story 008: Professor Topic Management
 
+**Status:** finished
+
 ## Story
 **As a** Professor  
 **I want** to create and manage research topics for lab rotation courses  

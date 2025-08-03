@@ -85,7 +85,9 @@ const ProfessorDashboard = () => {
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">
-                <button className="action-button">课程管理</button>
+                <button className="action-button" onClick={() => window.location.href = '/professor/courses/lab-rotation/1/topic-management'}>
+                  课题管理
+                </button>
                 <button className="action-button">AI助手</button>
                 <button className="action-button">成绩录入</button>
                 <button className="action-button">学生管理</button>
