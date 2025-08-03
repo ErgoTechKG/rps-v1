@@ -83,6 +83,7 @@ import Forms from './pages/student/courses/comprehensive-eval/material-submissio
 import UploadCenter from './pages/student/courses/comprehensive-eval/material-submission/UploadCenter'
 import SubmissionStatus from './pages/student/courses/comprehensive-eval/material-submission/SubmissionStatus'
 import Preview from './pages/student/courses/comprehensive-eval/material-submission/Preview'
+import ProgressTracking from './pages/student/courses/comprehensive-eval/progress-tracking/ProgressTracking'
 import './App.css'
 
 function App() {
@@ -559,6 +560,24 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <Preview />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/progress-tracking" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ProgressTracking />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/progress-tracking/:tab" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <ProgressTracking />
                 </ProtectedRoute>
               } 
             />

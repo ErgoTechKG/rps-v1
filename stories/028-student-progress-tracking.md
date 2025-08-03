@@ -1,5 +1,12 @@
 # User Story 028: Student Progress Tracking for Comprehensive Evaluation
 
+## Metadata
+- **Status**: finished
+- **Priority**: High
+- **Estimate**: 8 story points
+- **Actual**: 8 story points
+- **Completed**: 2025-08-03
+
 ## Story
 **As a** Student  
 **I want** to track my progress through the comprehensive evaluation process  
