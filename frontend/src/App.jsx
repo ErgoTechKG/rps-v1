@@ -63,6 +63,10 @@ import DataExport from './pages/secretary/data-management/DataExport'
 import KeyMetrics from './pages/leader/courses/lab-rotation/executive-overview/KeyMetrics'
 import ProgressSummary from './pages/leader/courses/lab-rotation/executive-overview/ProgressSummary'
 import Alerts from './pages/leader/courses/lab-rotation/executive-overview/Alerts'
+import ProfessorWorkload from './pages/leader/courses/lab-rotation/resource-analysis/ProfessorWorkload'
+import LabUtilization from './pages/leader/courses/lab-rotation/resource-analysis/LabUtilization'
+import BudgetExecution from './pages/leader/courses/lab-rotation/resource-analysis/BudgetExecution'
+import Optimization from './pages/leader/courses/lab-rotation/resource-analysis/Optimization'
 import './App.css'
 
 function App() {
@@ -602,6 +606,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['leader']}>
                   <Alerts />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/resource-analysis/professor-workload" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <ProfessorWorkload />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/resource-analysis/lab-utilization" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <LabUtilization />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/resource-analysis/budget-execution" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <BudgetExecution />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/leader/courses/lab-rotation/:courseId/resource-analysis/optimization" 
+              element={
+                <ProtectedRoute allowedRoles={['leader']}>
+                  <Optimization />
                 </ProtectedRoute>
               } 
             />

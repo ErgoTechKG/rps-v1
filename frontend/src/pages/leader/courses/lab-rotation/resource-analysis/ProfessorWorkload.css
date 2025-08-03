@@ -1,0 +1,463 @@
+.professor-workload-container {
+  padding: 24px;
+  background: linear-gradient(135deg, #FFF3E0 0%, #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+.workload-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #FF6F00;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FF6F00;
+  margin: 0 0 8px 0;
+}
+
+.course-info {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.view-selector,
+.period-selector {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #333;
+}
+
+.refresh-button, .export-button {
+  padding: 8px 16px;
+  border: 1px solid #FF6F00;
+  border-radius: 6px;
+  background: white;
+  color: #FF6F00;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-button:hover, .export-button:hover {
+  background: #FF6F00;
+  color: white;
+}
+
+.refresh-button.refreshing {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-button:disabled {
+  cursor: not-allowed;
+}
+
+.workload-overview .metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.metric-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.primary-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  background: #FFF8E1;
+  border-radius: 8px;
+}
+
+.metric-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FF6F00;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.secondary-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.secondary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  background: #F8F9FA;
+  border-radius: 6px;
+}
+
+.secondary-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.secondary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.secondary-value.risk {
+  color: #F44336;
+}
+
+.activities-card .metric-content {
+  gap: 0;
+}
+
+.activities-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activity-label {
+  font-size: 14px;
+  color: #333;
+  min-width: 80px;
+}
+
+.activity-bar {
+  flex: 1;
+  height: 16px;
+  background: #E0E0E0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.activity-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.activity-fill.teaching {
+  background: linear-gradient(90deg, #FF6F00, #FF8F00);
+}
+
+.activity-fill.supervision {
+  background: linear-gradient(90deg, #4CAF50, #66BB6A);
+}
+
+.activity-fill.research {
+  background: linear-gradient(90deg, #2196F3, #42A5F5);
+}
+
+.activity-fill.administration {
+  background: linear-gradient(90deg, #9C27B0, #BA68C8);
+}
+
+.activity-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  min-width: 40px;
+  text-align: right;
+}
+
+.trends-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #F8F9FA;
+  border-radius: 6px;
+}
+
+.trend-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.trend-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.trend-value.positive {
+  color: #4CAF50;
+}
+
+.trend-value.negative {
+  color: #F44336;
+}
+
+.workload-distribution {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.distribution-table {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.workload-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workload-table th {
+  background: #F8F9FA;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #eee;
+}
+
+.workload-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.professor-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.workload-hours {
+  font-weight: 600;
+  color: #FF6F00;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  min-width: 60px;
+}
+
+.workload-recommendations {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #FF6F00;
+}
+
+.recommendations-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+}
+
+.recommendation-item.warning {
+  background: #FFEBEE;
+  border-left-color: #F44336;
+}
+
+.recommendation-item.suggestion {
+  background: #FFF3E0;
+  border-left-color: #FF9800;
+}
+
+.recommendation-item.positive {
+  background: #E8F5E9;
+  border-left-color: #4CAF50;
+}
+
+.recommendation-item.action {
+  background: #E3F2FD;
+  border-left-color: #2196F3;
+}
+
+.recommendation-priority {
+  flex-shrink: 0;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  min-width: 24px;
+  text-align: center;
+}
+
+.priority-badge.high {
+  background: #F44336;
+}
+
+.priority-badge.medium {
+  background: #FF9800;
+}
+
+.priority-badge.low {
+  background: #4CAF50;
+}
+
+.recommendation-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+  .workload-overview .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .professor-workload-container {
+    padding: 16px;
+  }
+  
+  .workload-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .header-actions {
+    flex-wrap: wrap;
+  }
+  
+  .metric-card {
+    padding: 16px;
+  }
+  
+  .primary-metric {
+    padding: 12px;
+  }
+  
+  .metric-value {
+    font-size: 28px;
+  }
+  
+  .secondary-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .activity-item {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  
+  .activity-label {
+    min-width: auto;
+    text-align: center;
+  }
+  
+  .activity-value {
+    text-align: center;
+  }
+  
+  .table-container {
+    font-size: 14px;
+  }
+  
+  .workload-table th,
+  .workload-table td {
+    padding: 8px;
+  }
+  
+  .recommendation-item {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+}

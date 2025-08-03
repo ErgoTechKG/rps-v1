@@ -1,5 +1,7 @@
 # User Story 021: Leader Resource Analysis for Lab Rotation
 
+**Status**: finished
+
 ## Story
 **As a** Leader  
 **I want** to analyze resource utilization and allocation for lab rotation courses  
