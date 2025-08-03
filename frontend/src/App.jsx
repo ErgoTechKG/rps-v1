@@ -10,6 +10,7 @@ import SecretaryDashboard from './pages/secretary/SecretaryDashboard'
 import LeaderDashboard from './pages/leader/LeaderDashboard'
 import Unauthorized from './pages/Unauthorized'
 import NotificationPreferences from './pages/shared/notifications/NotificationPreferences'
+import SharedCalendar from './pages/shared/calendar/SharedCalendar'
 import './App.css'
 
 function App() {
@@ -72,6 +73,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <NotificationPreferences />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/shared/calendar" 
+              element={
+                <ProtectedRoute>
+                  <SharedCalendar />
                 </ProtectedRoute>
               } 
             />

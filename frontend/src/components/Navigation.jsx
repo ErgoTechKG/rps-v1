@@ -149,6 +149,10 @@ const Navigation = () => {
 
           <NotificationCenter />
 
+          <Link to="/shared/calendar" className="nav-action-btn" aria-label="日历">
+            📅
+          </Link>
+
           <Link to="/help" className="nav-action-btn" aria-label="帮助">
             ❓
           </Link>
