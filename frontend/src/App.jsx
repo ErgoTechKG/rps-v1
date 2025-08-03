@@ -72,6 +72,8 @@ import SatisfactionSurvey from './pages/leader/courses/lab-rotation/quality-asse
 import GoalAchievement from './pages/leader/courses/lab-rotation/quality-assessment/GoalAchievement'
 import ComparativeAnalysis from './pages/leader/courses/lab-rotation/quality-assessment/ComparativeAnalysis'
 import ExpertDashboard from './pages/professor/courses/comprehensive-eval/ExpertDashboard'
+import EvaluationInterface from './pages/professor/courses/comprehensive-eval/EvaluationInterface'
+import BatchEvaluation from './pages/professor/courses/comprehensive-eval/BatchEvaluation'
 import './App.css'
 
 function App() {
@@ -305,6 +307,24 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['professor']}>
                   <ExpertDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/comprehensive-eval/:courseId/evaluation-interface/student/:studentId" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <EvaluationInterface />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/professor/courses/comprehensive-eval/:courseId/batch-evaluation" 
+              element={
+                <ProtectedRoute allowedRoles={['professor']}>
+                  <BatchEvaluation />
                 </ProtectedRoute>
               } 
             />

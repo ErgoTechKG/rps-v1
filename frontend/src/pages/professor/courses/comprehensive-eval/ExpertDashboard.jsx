@@ -273,15 +273,35 @@ function ExpertDashboard() {
 
                 <div className="evaluation-actions">
                   {evaluation.status === 'pending' && (
-                    <button className="action-btn primary">Start Evaluation</button>
+                    <Link 
+                      to={`/professor/courses/comprehensive-eval/${courseId}/evaluation-interface/student/${evaluation.id}`}
+                      className="action-btn primary"
+                    >
+                      Start Evaluation
+                    </Link>
                   )}
                   {evaluation.status === 'in-progress' && (
-                    <button className="action-btn primary">Continue</button>
+                    <Link 
+                      to={`/professor/courses/comprehensive-eval/${courseId}/evaluation-interface/student/${evaluation.id}`}
+                      className="action-btn primary"
+                    >
+                      Continue
+                    </Link>
                   )}
                   {evaluation.status === 'completed' && (
-                    <button className="action-btn secondary">View Report</button>
+                    <Link 
+                      to={`/professor/courses/comprehensive-eval/${courseId}/evaluation-interface/student/${evaluation.id}`}
+                      className="action-btn secondary"
+                    >
+                      View Report
+                    </Link>
                   )}
-                  <button className="action-btn secondary">Details</button>
+                  <Link 
+                    to={`/professor/courses/comprehensive-eval/${courseId}/evaluation-interface/student/${evaluation.id}`}
+                    className="action-btn secondary"
+                  >
+                    Details
+                  </Link>
                 </div>
               </div>
             ))}
@@ -381,7 +401,7 @@ function ExpertDashboard() {
               <div className="tool-name">Help & Training</div>
               <div className="tool-description">Resources and support</div>
             </Link>
-            <Link to={`/professor/courses/comprehensive-eval/${courseId}/batch`} className="tool-card">
+            <Link to={`/professor/courses/comprehensive-eval/${courseId}/batch-evaluation`} className="tool-card">
               <div className="tool-icon">⚡</div>
               <div className="tool-name">Batch Operations</div>
               <div className="tool-description">Bulk actions and shortcuts</div>
