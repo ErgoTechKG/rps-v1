@@ -73,6 +73,49 @@
   border-color: #4CAF50;
 }
 
+.ai-assistant {
+  text-align: center;
+}
+
+.ai-welcome {
+  margin-bottom: 20px;
+}
+
+.ai-avatar {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.ai-message {
+  font-size: 14px;
+  color: #212121;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ai-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-suggestion-btn {
+  padding: 10px 16px;
+  background: #F8F9FA;
+  border: 1px solid #E0E0E0;
+  border-radius: 20px;
+  color: #4CAF50;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.ai-suggestion-btn:hover {
+  background: #E8F5E9;
+  border-color: #4CAF50;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
   .progress-item {
     flex-direction: column;

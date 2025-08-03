@@ -84,6 +84,23 @@ const StudentDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">AI学习助手</h3>
+            <div className="card-content">
+              <div className="ai-assistant">
+                <div className="ai-welcome">
+                  <div className="ai-avatar">🤖</div>
+                  <p className="ai-message">你好！我是你的AI学习助手，有什么可以帮助你的吗？</p>
+                </div>
+                <div className="ai-suggestions">
+                  <button className="ai-suggestion-btn">帮我分析学习进度</button>
+                  <button className="ai-suggestion-btn">推荐学习资料</button>
+                  <button className="ai-suggestion-btn">答疑解惑</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">

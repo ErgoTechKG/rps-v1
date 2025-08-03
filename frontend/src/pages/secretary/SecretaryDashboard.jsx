@@ -79,6 +79,35 @@ const SecretaryDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">实时警报</h3>
+            <div className="card-content">
+              <div className="alert-list">
+                <div className="alert-item warning">
+                  <span className="alert-icon">⚠️</span>
+                  <div className="alert-content">
+                    <span className="alert-title">数据采集延迟</span>
+                    <span className="alert-desc">CS101课程数据同步延迟15分钟</span>
+                  </div>
+                </div>
+                <div className="alert-item info">
+                  <span className="alert-icon">ℹ️</span>
+                  <div className="alert-content">
+                    <span className="alert-title">系统维护提醒</span>
+                    <span className="alert-desc">计划维护将于明天凌晨2点开始</span>
+                  </div>
+                </div>
+                <div className="alert-item success">
+                  <span className="alert-icon">✅</span>
+                  <div className="alert-content">
+                    <span className="alert-title">备份完成</span>
+                    <span className="alert-desc">每日数据备份已成功完成</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">

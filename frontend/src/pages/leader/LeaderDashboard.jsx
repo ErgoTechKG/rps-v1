@@ -99,6 +99,42 @@ const LeaderDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">系统状态</h3>
+            <div className="card-content">
+              <div className="system-status">
+                <div className="status-indicator">
+                  <div className="status-dot operational"></div>
+                  <span className="status-label">系统运行正常</span>
+                </div>
+                <div className="status-metrics">
+                  <div className="metric-item">
+                    <span className="metric-label">在线用户</span>
+                    <span className="metric-value">1,532</span>
+                  </div>
+                  <div className="metric-item">
+                    <span className="metric-label">响应时间</span>
+                    <span className="metric-value">85ms</span>
+                  </div>
+                  <div className="metric-item">
+                    <span className="metric-label">CPU使用率</span>
+                    <span className="metric-value">42%</span>
+                  </div>
+                  <div className="metric-item">
+                    <span className="metric-label">内存使用率</span>
+                    <span className="metric-value">68%</span>
+                  </div>
+                </div>
+                <div className="recent-alerts">
+                  <h4 className="alerts-title">最近警报</h4>
+                  <div className="alerts-content">
+                    <p className="no-alerts">暂无重要警报</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">

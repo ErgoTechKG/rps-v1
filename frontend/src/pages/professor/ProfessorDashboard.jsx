@@ -71,6 +71,30 @@ const ProfessorDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">数据概览</h3>
+            <div className="card-content">
+              <div className="data-overview">
+                <div className="overview-item">
+                  <span className="overview-label">平均出勤率</span>
+                  <span className="overview-value">93.5%</span>
+                </div>
+                <div className="overview-item">
+                  <span className="overview-label">作业提交率</span>
+                  <span className="overview-value">87.2%</span>
+                </div>
+                <div className="overview-item">
+                  <span className="overview-label">平均成绩</span>
+                  <span className="overview-value">82.6分</span>
+                </div>
+                <div className="overview-item">
+                  <span className="overview-label">学生满意度</span>
+                  <span className="overview-value">4.5/5.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">
