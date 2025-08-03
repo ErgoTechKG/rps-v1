@@ -77,6 +77,7 @@ import BatchEvaluation from './pages/professor/courses/comprehensive-eval/BatchE
 import EvaluationCriteria from './pages/professor/courses/comprehensive-eval/standards-reference/EvaluationCriteria'
 import ScoringRubrics from './pages/professor/courses/comprehensive-eval/standards-reference/ScoringRubrics'
 import EvaluationExamples from './pages/professor/courses/comprehensive-eval/standards-reference/EvaluationExamples'
+import EvaluationHome from './pages/student/courses/comprehensive-eval/EvaluationHome'
 import './App.css'
 
 function App() {
@@ -490,6 +491,15 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <MaterialsPortfolio />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/evaluation-home" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <EvaluationHome />
                 </ProtectedRoute>
               } 
             />

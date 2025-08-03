@@ -1,5 +1,7 @@
 # User Story 026: Student Comprehensive Evaluation Home Dashboard
 
+**Status:** finished
+
 ## Story
 **As a** Student  
 **I want** to access a comprehensive evaluation dashboard  

@@ -180,6 +180,31 @@ const StudentDashboard = () => {
           </div>
 
           <div className="dashboard-card">
+            <h3 className="card-title">综合评估</h3>
+            <div className="card-content">
+              <div className="comprehensive-eval-info">
+                <p>参与综合评估，提交材料并跟踪进度</p>
+                <div className="eval-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">2/5</span>
+                    <span className="stat-label">已提交材料</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">5</span>
+                    <span className="stat-label">剩余天数</span>
+                  </div>
+                </div>
+                <button 
+                  className="primary-action-btn"
+                  onClick={() => navigate('/student/courses/comprehensive-eval/CS101/evaluation-home')}
+                >
+                  进入评估中心
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="dashboard-card">
             <h3 className="card-title">快捷操作</h3>
             <div className="card-content">
               <div className="action-buttons">
