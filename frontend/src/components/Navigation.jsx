@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import NotificationCenter from './NotificationCenter'
 import './Navigation.css'
 
 const Navigation = () => {
@@ -116,9 +117,6 @@ const Navigation = () => {
   const currentMenuItems = menuItems[user?.role] || []
   const breadcrumb = getBreadcrumb()
 
-  // Mock notification count - in real app, this would come from API
-  const notificationCount = 3
-
   return (
     <nav className="navigation">
       <div className="nav-top">
@@ -149,15 +147,7 @@ const Navigation = () => {
             🔍
           </button>
 
-          <button 
-            className="nav-action-btn notification-btn"
-            aria-label="通知"
-          >
-            🔔
-            {notificationCount > 0 && (
-              <span className="notification-badge">{notificationCount}</span>
-            )}
-          </button>
+          <NotificationCenter />
 
           <Link to="/help" className="nav-action-btn" aria-label="帮助">
             ❓

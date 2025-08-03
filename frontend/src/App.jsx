@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
+import { NotificationProvider } from './contexts/NotificationContext'
 import LoginForm from './components/LoginForm'
 import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './pages/Dashboard'
@@ -8,14 +9,16 @@ import StudentDashboard from './pages/student/StudentDashboard'
 import SecretaryDashboard from './pages/secretary/SecretaryDashboard'
 import LeaderDashboard from './pages/leader/LeaderDashboard'
 import Unauthorized from './pages/Unauthorized'
+import NotificationPreferences from './pages/shared/notifications/NotificationPreferences'
 import './App.css'
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <div className="app">
-          <Routes>
+      <NotificationProvider>
+        <Router>
+          <div className="app">
+            <Routes>
             <Route path="/login" element={<LoginForm />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
             
@@ -64,12 +67,22 @@ function App() {
               } 
             />
             
+            <Route 
+              path="/shared/notifications/preferences" 
+              element={
+                <ProtectedRoute>
+                  <NotificationPreferences />
+                </ProtectedRoute>
+              } 
+            />
+            
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </div>
       </Router>
+      </NotificationProvider>
     </AuthProvider>
   )
 }
