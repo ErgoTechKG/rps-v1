@@ -1,2 +1,0 @@
-UPDATE @PLAN.md and add the task in pending: $ARGUMENTS1 to TASK.md following the established style with a new TASK NUMBER. No need read the code-base, just descript the task itself
-Don't touch completed tasks, but if there is are tasks overlap with this with this one, modify accordinglyß
