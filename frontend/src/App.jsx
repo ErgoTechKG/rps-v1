@@ -51,6 +51,10 @@ import ProfessorList from './pages/secretary/course-management/lab-rotation/part
 import StudentList from './pages/secretary/course-management/lab-rotation/participant-management/StudentList'
 import MatchingOverview from './pages/secretary/course-management/lab-rotation/participant-management/MatchingOverview'
 import Adjustment from './pages/secretary/course-management/lab-rotation/participant-management/Adjustment'
+import TaskCompletion from './pages/secretary/course-management/lab-rotation/process-monitoring/TaskCompletion'
+import SubmissionTracking from './pages/secretary/course-management/lab-rotation/process-monitoring/SubmissionTracking'
+import AttendanceMonitoring from './pages/secretary/course-management/lab-rotation/process-monitoring/AttendanceMonitoring'
+import AlertManagement from './pages/secretary/course-management/lab-rotation/process-monitoring/AlertManagement'
 import './App.css'
 
 function App() {
@@ -482,6 +486,42 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['secretary']}>
                   <Adjustment />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/process-monitoring/task-completion" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <TaskCompletion />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/process-monitoring/submission-tracking" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <SubmissionTracking />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/process-monitoring/attendance" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <AttendanceMonitoring />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/course-management/lab-rotation/:courseId/process-monitoring/alerts" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <AlertManagement />
                 </ProtectedRoute>
               } 
             />

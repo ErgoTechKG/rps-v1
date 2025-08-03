@@ -1,5 +1,7 @@
 # User Story 018: Secretary Process Monitoring for Lab Rotation
 
+**Status:** finished
+
 ## Story
 **As a** Secretary  
 **I want** to monitor and track the progress of lab rotation activities  
