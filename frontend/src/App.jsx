@@ -78,6 +78,11 @@ import EvaluationCriteria from './pages/professor/courses/comprehensive-eval/sta
 import ScoringRubrics from './pages/professor/courses/comprehensive-eval/standards-reference/ScoringRubrics'
 import EvaluationExamples from './pages/professor/courses/comprehensive-eval/standards-reference/EvaluationExamples'
 import EvaluationHome from './pages/student/courses/comprehensive-eval/EvaluationHome'
+import MaterialSubmission from './pages/student/courses/comprehensive-eval/material-submission/MaterialSubmission'
+import Forms from './pages/student/courses/comprehensive-eval/material-submission/Forms'
+import UploadCenter from './pages/student/courses/comprehensive-eval/material-submission/UploadCenter'
+import SubmissionStatus from './pages/student/courses/comprehensive-eval/material-submission/SubmissionStatus'
+import Preview from './pages/student/courses/comprehensive-eval/material-submission/Preview'
 import './App.css'
 
 function App() {
@@ -500,6 +505,60 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['student']}>
                   <EvaluationHome />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/material-submission" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <MaterialSubmission />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/material-submission/forms" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <Forms />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/material-submission/upload-center" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <UploadCenter />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/material-submission/upload-center/:category" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <UploadCenter />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/material-submission/submission-status" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <SubmissionStatus />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/student/courses/comprehensive-eval/:courseId/material-submission/preview" 
+              element={
+                <ProtectedRoute allowedRoles={['student']}>
+                  <Preview />
                 </ProtectedRoute>
               } 
             />

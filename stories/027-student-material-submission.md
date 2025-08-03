@@ -1,5 +1,12 @@
 # User Story 027: Student Material Submission for Comprehensive Evaluation
 
+## Metadata
+- **Status**: finished
+- **Priority**: High
+- **Estimate**: 8 story points
+- **Actual**: 8 story points
+- **Completed**: 2024-08-03
+
 ## Story
 **As a** Student  
 **I want** to submit my evaluation materials systematically and efficiently  
