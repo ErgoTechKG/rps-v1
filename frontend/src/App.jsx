@@ -85,6 +85,11 @@ import SubmissionStatus from './pages/student/courses/comprehensive-eval/materia
 import Preview from './pages/student/courses/comprehensive-eval/material-submission/Preview'
 import ProgressTracking from './pages/student/courses/comprehensive-eval/progress-tracking/ProgressTracking'
 import ResultsQuery from './pages/student/courses/comprehensive-eval/results-query/ResultsQuery'
+import EvaluationManagement from './pages/secretary/course-management/comprehensive-eval/evaluation-management/EvaluationManagement'
+import BasicSettings from './pages/secretary/course-management/comprehensive-eval/scheme-configuration/BasicSettings'
+import TimelineSetup from './pages/secretary/course-management/comprehensive-eval/scheme-configuration/TimelineSetup'
+import CriteriaManagement from './pages/secretary/course-management/comprehensive-eval/scheme-configuration/CriteriaManagement'
+import WeightConfiguration from './pages/secretary/course-management/comprehensive-eval/scheme-configuration/WeightConfiguration'
 import './App.css'
 
 function App() {
@@ -768,6 +773,51 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['secretary']}>
                   <DataExport />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/courses/comprehensive-eval/:courseId/evaluation-management" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <EvaluationManagement />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/courses/comprehensive-eval/:courseId/scheme-configuration/basic-settings" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <BasicSettings />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/courses/comprehensive-eval/:courseId/scheme-configuration/timeline-setup" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <TimelineSetup />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/courses/comprehensive-eval/:courseId/scheme-configuration/criteria-management" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <CriteriaManagement />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/secretary/courses/comprehensive-eval/:courseId/scheme-configuration/weight-configuration" 
+              element={
+                <ProtectedRoute allowedRoles={['secretary']}>
+                  <WeightConfiguration />
                 </ProtectedRoute>
               } 
             />
