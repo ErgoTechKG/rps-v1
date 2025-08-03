@@ -109,6 +109,12 @@ AI functionality, analytics, and specialized tools.
 | 039 | Student-Professor Communication | Student | 038, 010, 004 |
 | 040 | Student Attendance Management | Student | 014, 005, 004 |
 
+#### Shared Platform Features
+| Story ID | Title | Role | Dependencies |
+|----------|-------|------|--------------|
+| 049 | Shared Document Management System | All | 001, 003, 007 |
+| 050 | Shared Feedback and Suggestion System | All | 001, 003, 004 |
+
 ### Phase 5: System Administration (Medium Priority)
 Advanced administrative and governance features.
 
@@ -129,15 +135,18 @@ Advanced administrative and governance features.
 |----------|-------|------|--------------|
 | 047 | Advanced Analytics and Reporting | Secretary/Leader | 019, 042, 041 |
 | 048 | Integration with External Systems | Secretary | 043, 019, 044 |
+| 049 | Shared Document Management System | All | 001, 003, 007 |
+| 050 | Shared Feedback and Suggestion System | All | 001, 003, 004 |
 
 ## Story Statistics
 
-- **Total Stories**: 48
-- **Foundation Stories**: 7 (14.6%)
-- **Lab Rotation Stories**: 15 (31.3%)
-- **Comprehensive Evaluation Stories**: 13 (27.1%)
-- **Role-Specific Features**: 7 (14.6%)
-- **System Administration**: 6 (12.5%)
+- **Total Stories**: 50
+- **Foundation Stories**: 7 (14.0%)
+- **Lab Rotation Stories**: 15 (30.0%)
+- **Comprehensive Evaluation Stories**: 13 (26.0%)
+- **Role-Specific Features**: 7 (14.0%)
+- **System Administration**: 6 (12.0%)
+- **Shared Platform Features**: 2 (4.0%)
 
 ## Implementation Notes
 
@@ -158,6 +167,6 @@ All stories align with the routing structure defined in DESIGN.md:
 - `/student/*` - 11 stories  
 - `/secretary/*` - 13 stories
 - `/leader/*` - 9 stories
-- `/shared/*` - 7 stories
+- `/shared/*` - 9 stories
 
 This ensures complete coverage of the planned application architecture and user workflows.

@@ -1,23 +1,10 @@
-import { useAuth } from '../../contexts/AuthContext'
 import './StudentDashboard.css'
 
 const StudentDashboard = () => {
-  const { user, logout } = useAuth()
-
   return (
     <div className="dashboard-container student-dashboard">
-      <header className="dashboard-header">
-        <div className="header-content">
-          <h1 className="dashboard-title">学生工作台</h1>
-          <div className="user-info">
-            <span className="user-name">欢迎，{user?.name}</span>
-            <button onClick={logout} className="logout-button">
-              退出登录
-            </button>
-          </div>
-        </div>
-      </header>
-
+      <h1 className="page-title">学生工作台</h1>
+      
       <div className="dashboard-content">
         <div className="dashboard-grid">
           <div className="dashboard-card">
